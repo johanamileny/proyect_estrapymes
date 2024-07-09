@@ -1,37 +1,44 @@
+<div class="blurred-image-container">
+  <img src="estrapymes\src\app\assets\campus-med.jpg" alt="">
 <div class="h-screen w-full grid place-items-center">
-  <section class="p-4 border-2 rounded-lg">
-      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
-
-<div class="testbox">
-  <section class="content-section">
-  <h1>Registro</h1>
-  <form action="/">
-      <hr>
-    <div class="accounttype">
-      <input type="radio" value="None" id="radioOne" name="account" checked/>
-      <label for="radioOne" class="radio" chec>Natural</label>
-      <input type="radio" value="None" id="radioTwo" name="account" />
-      <label for="radioTwo" class="radio">Juridica</label>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    
+   
+    <div class="testbox">
+      <section class="content-section">
+        <h1>Registro</h1>
+        <form action="/">
+          <hr>
+          <div class="accounttype">
+            <input type="radio" value="None" id="radioOne" name="account" checked/>
+            <label for="radioOne" class="radio">Natural</label>
+            <input type="radio" value="None" id="radioTwo" name="account" />
+            <label for="radioTwo" class="radio">Juridica</label>
+          </div>
+          <hr>
+          <label id="icon" for="name"><i class="fa-solid fa-user"></i></label>
+          <input type="text" name="name" id="name" placeholder="Nombre - Razon Social" required/>
+          <label id="icon" for="name"><i class="fa-solid fa-envelope"></i></label>
+          <input type="text" name="name" id="name" placeholder="Correo" required/>
+          <label id="icon" for="name"><i class="fa-solid fa-shield"></i></label>
+          <input class="mb-4 w-96 p-3 text-black rounded" type="password" name="password" id="password" placeholder="Contraseña" formControlName="password">
+          <label id="icon" for="name"><i class="fa-solid fa-lock"></i></label>
+          <input class="mb-4 w-96 p-3 text-black rounded" type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmación Contraseña" formControlName="passwordConfirm">
+          <div *ngIf="registerForm.hasError('passwordConfirm') && (registerForm.touched || registerForm.dirty)" class="text-red-600 w-96">
+            Password confirm does not match with the password value.
+          </div>
+          <select id="company-type" name="company-type">
+            <option value="">Selecciona el tipo de empresa</option>
+            <option value="small">Pequeña</option>
+            <option value="median">Mediana</option>
+            <option value="big">Grande</option>
+          </select>
+          <label id="icon" for="name"><i class="fa-solid fa-industry"></i></label>
+          <input type="text" name="name" id="name" placeholder="Sector" required/>
+          <a href="#" class="button">Registrarse</a>
+        </form>
+      </section>
     </div>
-  <hr>
-  <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="text" name="name" id="name" placeholder="Nombre - Razon Social" required/>
-  <label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder="Correo" required/>
-  <label id="icon" for="name"><i class="icon-user"></i></label>
-  <input type="password" name="name" id="name" placeholder="Contraseña" required/>
-  <select id="company-type" name="company-type">
-  <option value="">Selecciona el tipo de empresa</option>
-  <option value="small">Pequeña</option>
-  <option value="median">Mediana</option>
-  <option value="big">Grande</option>
-  <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="text" name="name" id="name" placeholder="Sector" required/>
-  </select>
-   <a href="#" class="button">Registrarse</a>
-   </form>
-</section>
 </div>
-</section>
 </div>
