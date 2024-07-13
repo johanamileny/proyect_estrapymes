@@ -1,0 +1,20 @@
+<div class="h-screen w-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-yellow-500">
+    <section class="p-8 bg-white shadow-lg rounded-lg">
+        <h2 class="text-center mb-6 font-extrabold text-3xl text-blue-700">Inicio de Sesión</h2>
+        <div>
+            <span class="text-red-500">{{errorMessage}}</span>
+            <form class="flex flex-col">
+                <input class="mb-4 w-80 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="text" name="username" id="username"
+                    placeholder="Usuario" [(ngModel)]="username">
+
+                <input class="mb-4 w-80 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="password" name="password" id="password"
+                    placeholder="Contraseña" [(ngModel)]="password">
+
+                <div class="flex justify-center">
+                    <button
+                        class="bg-blue-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-blue-700 transition duration-300" (click)="login()">Iniciar Sesión</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
