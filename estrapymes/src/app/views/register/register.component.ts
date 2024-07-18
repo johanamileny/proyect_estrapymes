@@ -62,8 +62,6 @@ export class RegisterComponent implements OnInit {
     } else {
       this.registerForm.get('company')?.clearValidators();
       this.registerForm.get('sector')?.clearValidators();
-      this.registerForm.get('company')?.reset();
-      this.registerForm.get('sector')?.reset();
     }
 
     this.registerForm.get('company')?.updateValueAndValidity();
