@@ -20,4 +20,10 @@ export class HomepageComponent {
   navigateToRegister() {
     this.router.navigate(['/register']);
   }
-}
+
+
+  navigateToHomepage() {
+    this.router.navigate(['/homepage']);
+  }
+ }
+

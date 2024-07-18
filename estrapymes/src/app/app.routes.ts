@@ -22,12 +22,8 @@ export const routes: Routes = [
     },
     {
         path: '',
-        redirectTo: 'register', // Cambiado para redirigir al registro por defecto
+        redirectTo: 'homepage', // Cambiado para redirigir al registro por defecto
         pathMatch: 'full'
-    },
-    {
-        path: '**', // Ruta para manejar cualquier ruta no encontrada
-        redirectTo: 'register'
     }
 ];
 
