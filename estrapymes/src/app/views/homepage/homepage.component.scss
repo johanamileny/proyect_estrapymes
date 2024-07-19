@@ -51,7 +51,7 @@ ul {
 
 /* Start Landing Page */
 .landing-page header {
-  background-color: #002E60; /* Ajusta el color de fondo según tus necesidades */
+  background-color: #3D83F4; /* Ajusta el color de fondo según tus necesidades */
   color: white;
   padding: 10px; /* Reducido para hacer la barra más pequeña */
   display: flex;
@@ -158,22 +158,27 @@ ul {
 }
 
 .image img {
-  max-width: 100%;
+  max-width: 91%;
+  margin-top: -20px;
+  margin-left: 1000px;
+
+
 }
 
 footer {
-  background-color: #001b71;
+  background-color: #3D83F4;
   color: white;
   text-align: center;
-  padding: 8px 0;
+  padding: 4px 0;
   position: fixed;
   bottom: 0;
   width: 100%;
+  height: 65px;
 }
 
 footer .logo {
   display: inline-block;
-  max-width: 200px;
+  max-width: 100px;
   vertical-align: middle;
 }
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
@@ -199,7 +204,7 @@ overflow:visible;
 }
 
 .main-menu {
-background:#0066cc;
+background:#3D83F4;
 border-right:1px solid #e5e5e5;
 position:absolute;
 top:0;
