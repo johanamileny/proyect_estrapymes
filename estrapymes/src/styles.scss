@@ -60,30 +60,51 @@ form {
 input,
 select {
   background: #f9f9f9; // Color de fondo de los campos
-  border: 1px solid #d0d5db; // Color del borde de los campos
+  border: 2px solid #d0d5db; // Color del borde de los campos
   border-radius: 5px; // Bordes redondeados de los campos
   padding: 0.75rem; // Espaciado interno de los campos
   margin-bottom: 1rem; // Espaciado entre los campos
   font-size: 1rem; // Tamaño del texto en los campos
-  transition: border 0.3s, background 0.3s; // Transición para los cambios de borde y fondo
-  
+  transition: border 0.3s, background 0.3s; // Transición para los cambios de borde y fondo 
   // Estilo para los campos al recibir el foco
   &:focus {
     outline: none; // Quitar el borde del enfoque predeterminado
     border-color: #2563eb; // Color de borde al enfocarse
     background: #ffffff; // Fondo blanco al enfocarse
   }
+ 
+  &.custom-select {
+    color: #a0aec0; /* Color inicial del texto (gray-400) */
+  }
+
+  &.custom-select:focus {
+    color: black; /* Color del texto cuando se enfoca */
+  }
+
+  &.custom-select option {
+    color: black; /* Color del texto de las opciones */
+  }
+
+  &.custom-select:not(:placeholder-shown) {
+    color: black; /* Color del texto cuando una opción está seleccionada */
+  }
+  
+  &.custom-select:invalid {
+    color: #a0aec0; /* Asegura que el texto del select sea gray-400 si no hay selección válida */
+  }
   
   // Estilo específico para el select
-  &.select-placeholder {
+ /* &.select-placeholder {
     color: #6B7280; // Color gris para el placeholder
   }
   
   // Asegura que el placeholder sea visible
-  &:invalid {
-    color: #6B7280; // Color gris para el placeholder
-  }
+   &:invalid {
+   color: #6B7280; // Color gris para el placeholder
+  }*/
 }
+
+
 
 /* Estilo para el botón de registro */
 button {

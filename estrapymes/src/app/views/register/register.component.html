@@ -9,12 +9,14 @@
         <input type="radio" value="juridica" id="radioTwo" name="account" formControlName="account" class="hidden peer/juridica" />
         <label for="radioTwo" class="cursor-pointer py-2 px-4 ml-2 border-2 border-gray-300 rounded-lg text-gray-600 peer-checked/juridica:bg-blue-500 peer-checked/juridica:text-white">Jurídica</label>
       </div>
-      
-      <input class="mb-4 w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="text" name="name" id="name" placeholder="Nombre - Razón Social"
+      <div class="relative mb-0">
+        <i class="fa-solid fa-user absolute left-4 top-4 text-gray-500"></i>
+      <input class="mb-4 w-full p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="text" name="name" id="name" placeholder="Nombre - Razón Social"
              formControlName="name" [ngClass]="{'mb-1': name?.invalid && (name?.dirty || name?.touched)}">
       <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="mb-4">
         <div *ngIf="name?.hasError('required')" class="text-red-600">
           El nombre es obligatorio.
+        </div>
         </div>
       </div>
 
@@ -35,7 +37,7 @@
       <div class="relative mb-0">
         <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
         <input 
-            class="w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+            class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
             type="password" 
             name="password" 
             id="password" 
@@ -52,7 +54,7 @@
     <div class="relative mb-0">
       <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
       <input
-      class="w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+      class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
           type="password" 
           name="passwordConfirm"
           id="passwordConfirm" 
@@ -70,18 +72,21 @@
     </div>
 
       
-      <div *ngIf="isJuridica">
+      <div *ngIf="isJuridica" class="relative mb-0">
+        <i class="fa-solid fa-building absolute left-4 top-4 text-gray-500"></i>
         
-        <select class="select-placeholder mb-4 w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                name="company" id="company" formControlName="company" required>
+        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select" 
+                name="company" id="company" formControlName="company" required >
           <option value="" disabled selected hidden>Tipo de Empresa</option>
           <option value="small">Pequeña</option>
           <option value="median">Mediana</option>
           <option value="big">Grande</option>
         </select>
 
-       
-        <select class="select-placeholder mb-5 w-full p-3 border-2 border-gray-300 rounded-lg  focus:border-blue-500"
+       <div class="relative mb-0">
+        <i class="fa-solid fa-landmark absolute left-4 top-4 text-gray-500"></i>
+        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg  focus:border-blue-500 custom-select" 
+        name="company" id="company" formControlName="company" required>"
                 name="sector" id="sector" formControlName="sector" required>
           <option value="" disabled selected hidden>Tipo de Sector</option>
           <option value="1">Agroindustria</option>
@@ -114,6 +119,7 @@
           <option value="28">Defensa y Aeroespacial</option>
         </select>
       </div>
+    </div>
       <div class="flex justify-center">
         <button
           class="bg-blue-600 text-white font-semibold py-2 px-5 rounded-full hover:bg-blue-700 transition duration-300"
