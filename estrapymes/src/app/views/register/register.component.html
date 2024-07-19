@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="relative mb-4">
+      <div class="relative mb-0">
         <i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-500"></i>
       <input class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="email" name="email" id="email" placeholder="Correo"
              formControlName="email" [ngClass]="{'mb-1': email?.invalid && (email?.dirty || email?.touched)}">
@@ -32,7 +32,7 @@
       </div>
     </div>
       
-      <div class="relative mb-4">
+      <div class="relative mb-0">
         <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
         <input 
             class="w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <div class="relative mb-4">
+    <div class="relative mb-0">
       <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
       <input
       class="w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
@@ -81,7 +81,7 @@
         </select>
 
        
-        <select class="select-placeholder mb-4 w-full p-3 border-2 border-gray-300 rounded-lg  focus:border-blue-500"
+        <select class="select-placeholder mb-5 w-full p-3 border-2 border-gray-300 rounded-lg  focus:border-blue-500"
                 name="sector" id="sector" formControlName="sector" required>
           <option value="" disabled selected hidden>Tipo de Sector</option>
           <option value="1">Agroindustria</option>
