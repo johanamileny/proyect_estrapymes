@@ -1,14 +1,28 @@
 <div class="h-screen w-full flex items-center justify-center bg-gradient-to-r from-blue-500 to-yellow-500">
     <section class="p-8 bg-white shadow-lg rounded-lg">
         <h2 class="text-center mb-6 font-extrabold text-3xl text-blue-700">Inicio de Sesión</h2>
-        <div>
+
+        <div class="relative mb-4">
+            <i class="fa-solid fa-user absolute left-4 top-4 text-gray-500"></i>
             <span class="text-red-500">{{errorMessage}}</span>
             <form class="flex flex-col">
-                <input class="mb-4 w-80 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="text" name="username" id="username"
-                    placeholder="Usuario" [(ngModel)]="username">
+                <input class="mb-4 w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+                        type="text" 
+                        name="username" 
+                        id="username"
+                        placeholder="Usuario" 
+                        [(ngModel)]="username">
 
-                <input class="mb-4 w-80 p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="password" name="password" id="password"
-                    placeholder="Contraseña" [(ngModel)]="password">
+            <div class="relative mb-4">
+                <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
+                    
+                <input class="mb-4 w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
+                        type="password" 
+                        name="password" 
+                        id="password"
+                        placeholder="Contraseña" 
+                        [(ngModel)]="password">
+            </div>          
 
                 <div class="flex justify-center">
                     <button
