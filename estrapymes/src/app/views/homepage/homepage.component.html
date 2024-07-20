@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal Estramipymes</title>
-
 </head>
 <body>
   <div class="landing-page">
     <header>
-      <div class="container">
-        <a href="#" class="logo"><b>Portal EstraMiPyme</b> <br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro  </a>
-        <ul class="links">
+      <div class="container mx-auto flex justify-between items-center from-black to-white">
+        <a href="#" class="logo text-white font-bold">
+          <b>Portal EstraMiPyme</b> <br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
+        </a>
+        <ul class="flex space-x-4">
           <li class="login-register-buttons">
             <button (click)="navigateToLogin()" class="login-button font-bold">Inicio de Sesión</button>
             <button (click)="navigateToRegister()" class="register-button font-bold">Regístrate</button>
@@ -19,117 +20,97 @@
         </ul>
       </div>
     </header>
-    
 
     <div class="content">
       <nav class="main-menu">
         <ul>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-home fa-2x"></i>
-              <span class="nav-text">
-                Bienvenido a Estramipyme
-              </span>
+            <a href="#welcome" class="nav-link">
+              <i class="fa fa-home fa-2x nav-icon"></i>
+              <span class="nav-text">Bienvenido a Estramipyme</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-comments fa-2x"></i>
-              <span class="nav-text">
-                Bibliografía del autor
-              </span>
+            <a href="#bibliography" class="nav-link">
+              <i class="fa fa-comments fa-2x nav-icon"></i>
+              <span class="nav-text">Bibliografía del autor</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-download fa-2x"></i>
-              <span class="nav-text">
-                Descargas del libro
-              </span>
+            <a href="#downloads" class="nav-link">
+              <i class="fa fa-download fa-2x nav-icon"></i>
+              <span class="nav-text">Descargas del libro</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-book fa-2x"></i>
-              <span class="nav-text">
-                Acceder al libro completo
-              </span>
+            <a href="#book" class="nav-link">
+              <i class="fa fa-book fa-2x nav-icon"></i>
+              <span class="nav-text">Acceder al libro completo</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa-solid fa-users fa-2x"></i>
-              <span class="nav-text">
-                Foro de la comunidad
-              </span>
+            <a href="#community" class="nav-link">
+              <i class="fa-solid fa-users fa-2x nav-icon"></i>
+              <span class="nav-text">Foro de la comunidad</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-calendar-days fa-2x"></i>
-              <span class="nav-text">
-                Eventos y talleres
-              </span>
+            <a href="#events" class="nav-link">
+              <i class="fa fa-calendar-days fa-2x nav-icon"></i>
+              <span class="nav-text">Eventos y talleres</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa-solid fa-headset fa-2x"></i>
-              <span class="nav-text">
-                FAQ y Asesorías
-              </span>
+            <a href="#faq" class="nav-link">
+              <i class="fa-solid fa-headset fa-2x nav-icon"></i>
+              <span class="nav-text">FAQ y Asesorías</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa-solid fa-handshake fa-2x"></i>
-              <span class="nav-text">
-                Conéctate con EAFIT
-              </span>
+            <a href="#connect" class="nav-link">
+              <i class="fa-solid fa-handshake fa-2x nav-icon"></i>
+              <span class="nav-text">Conéctate con EAFIT</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa-solid fa-circle-info fa-2x"></i>
-              <span class="nav-text">
-                Sobre Nosotros
-              </span>
+            <a href="#about" class="nav-link">
+              <i class="fa-solid fa-circle-info fa-2x nav-icon"></i>
+              <span class="nav-text">Sobre Nosotros</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa-solid fa-comment-sms fa-2x"></i>
-              <span class="nav-text">
-                Contáctanos
-              </span>
+            <a href="#contact" class="nav-link">
+              <i class="fa-solid fa-comment-sms fa-2x nav-icon"></i>
+              <span class="nav-text">Contáctanos</span>
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link">
-              <i class="fa fa-cogs fa-2x"></i>
-              <span class="nav-text">
-                Nuestras Redes Sociales
-              </span>
+            <a href="#social" class="nav-link">
+              <i class="fa fa-cogs fa-2x nav-icon"></i>
+              <span class="nav-text">Nuestras Redes Sociales</span>
             </a>
           </li>
         </ul>
       </nav>
 
-      <div class="container2">
-        <div class="info">
+      <div id="welcome" class="container2">
+        <div class="main-text">
+          <h1>¡Despierta el Potencial de Tu PYME!</h1>
+          <p>En Estramipyme, estamos aquí para llevar tu negocio al siguiente nivel con estrategias innovadoras y herramientas poderosas. ¡Comienza ahora y descubre cómo puedes transformar tu empresa y alcanzar nuevas alturas!</p>
+          <p><strong>Inicia tu viaje: Explora, Conoce, Actualiza, Integra</strong></p>
         </div>
-        <div class="image">
-          <img src="/assets/imagen.png" alt="Imagen de Estramipymes">
+        <div class="image-container">
+          <img src="assets/estramipyme.png" alt="Imagen de Estramipymes">
         </div>
       </div>
     </div>
 
     <footer>
-      <img src="/assets/eafit.png" alt="Logo de Estramipymes" class="logo">
+      <img src="assets/eafit.png" alt="Logo de Estramipymes" class="logo">
       <p>&copy; 2024 Universidad EAFIT. Todos los derechos reservados.</p>
     </footer>
   </div>
 
-  <script src="script.js"></script> 
+  <script src="script.js"></script>
 </body>
 </html>

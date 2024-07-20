@@ -7,6 +7,10 @@ body {
   font-family: 'Open Sans', roboto-serif;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #FFFFFF; 
 }
 
 a {
@@ -51,7 +55,7 @@ ul {
 
 /* Start Landing Page */
 .landing-page header {
-  background-color: #000000;
+  background-color: #000;
   color: white;
   padding: 10px;
   display: flex;
@@ -59,25 +63,35 @@ ul {
   justify-content: space-between;
   position: fixed;
   top: 0;
-  left: 60px; /* Desplaza el header para no superponerse al main-menu */
+  left: 0; /* Ajusta según la posición del logo */
   right: 0;
   z-index: 1000;
+  height: 80px; /* Ajusta según el tamaño del logo */
 }
 
 .landing-page header .container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
+.header-logo {
+  position: absolute;
+  left: 10px; /* Ajusta la distancia desde el borde izquierdo */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1001; /* Asegura que el logo esté por encima del contenido */
+}
+
+.logo-img {
+  height: 82px; /* Ajusta el tamaño del logo según sea necesario */
+}
+
 .landing-page header .logo {
   font-size: 1.2em;
-  color: white;
   text-decoration: none;
-  margin-right: 20px;
+  margin-left: 195px;
 }
 
 .landing-page header .links {
@@ -95,9 +109,9 @@ ul {
   background-color: #3B82F6;
   color: #f0f0f0;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 0.9em;
+  font-size: 1em;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
@@ -105,12 +119,15 @@ ul {
 .landing-page header .login-button:hover,
 .landing-page header .register-button:hover {
   background-color: #f0f0f0;
+  color: #3B82F6;
 }
 
 .landing-page .content {
   padding: 100px 20px 20px; /* Asegura que el contenido no quede detrás del header */
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .main-menu {
@@ -148,9 +165,9 @@ ul {
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  color: #000000;
+  color: #fff;
   font-family: 'Arial';
-  font-size: 14px;
+  font-size: 13.5px;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
 }
@@ -165,17 +182,39 @@ ul {
 }
 
 .main-menu .nav-text {
-  display: none;
+  opacity: 0; /* Inicialmente invisible */
+  transform: translateX(-20px); /* Inicialmente desplazado a la izquierda */
+  overflow: hidden; /* Asegura que el contenido no se desborde */
+  white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+  height: 0; /* Oculta el contenido cuando no está visible */
+  line-height: 0; /* Ajuste para asegurar que el contenido no se desborde */
+  margin-left: 10px;
 }
 
 .main-menu:hover .nav-text {
-  display: inline;
+  opacity: 1; /* Visible al hacer hover */
+  transform: translateX(0); /* Desplazado a la posición original */
+  height: auto; /* Permite que el contenido tome el espacio necesario */
+  line-height: normal; /* Restablece el line-height */
+  margin-left: 10px; /* Espacio adicional si es necesario */
 }
 
 .container2 {
   display: flex;
   align-items: center;
-  margin-left: 300px; /* Ajuste para no quedar detrás del menú lateral */
+  margin-left: 80px; /* Ajuste para no quedar detrás del menú lateral */
+  padding: 50px 20px;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.container2.visible {
+  opacity: 1;
 }
 
 .info {
@@ -203,12 +242,9 @@ footer {
   color: white;
   text-align: center;
   padding: 4px 0;
-  position: fixed;
-  bottom: 0;
-  left: 60px; /* Desplaza el footer para no superponerse al main-menu */
-  width: calc(100% - 60px);
+  width: 100%;
   height: 65px;
-  z-index: 1000;
+  border-top: 2px solid #3B82F6;
 }
 
 footer .logo {
@@ -217,7 +253,62 @@ footer .logo {
   vertical-align: middle;
 }
 
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.main-text {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main-text h1 {
+  color: #0082ca;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.main-text p {
+  color: #000;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+}
+
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
 /* End Landing Page */
+
+/* Scroll Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container2 {
+  animation: fadeIn 1s forwards;
+}
+
+.scroll-trigger {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.scroll-trigger.visible {
+  opacity: 1;
+}
