@@ -51,13 +51,17 @@ ul {
 
 /* Start Landing Page */
 .landing-page header {
-  background-color: #62A9BD; /* Ajusta el color de fondo según tus necesidades */
+  background-color: #000000;
   color: white;
-  padding: 10px; /* Reducido para hacer la barra más pequeña */
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: 41px;
+  position: fixed;
+  top: 0;
+  left: 60px; /* Desplaza el header para no superponerse al main-menu */
+  right: 0;
+  z-index: 1000;
 }
 
 .landing-page header .container {
@@ -70,11 +74,10 @@ ul {
 }
 
 .landing-page header .logo {
-  font-size: 1.2em; /* Reducido para hacer el texto más pequeño */
+  font-size: 1.2em;
   color: white;
   text-decoration: none;
   margin-right: 20px;
-  margin-left: 80px;
 }
 
 .landing-page header .links {
@@ -84,18 +87,17 @@ ul {
 
 .landing-page header .login-register-buttons {
   display: flex;
-  gap: 5px; /* Separación entre los botones */
+  gap: 10px;
 }
 
 .landing-page header .login-button,
 .landing-page header .register-button {
-  background-color: #616290;
-  color: #FFFFFF;
+  background-color: #3B82F6;
+  color: #f0f0f0;
   border: none;
-  padding: 5px 10px; /* Reducido para hacer los botones más pequeños */
-  margin: 0 5px;
+  padding: 5px 10px;
   cursor: pointer;
-  font-size: 0.9em; /* Reducido para hacer el texto de los botones más pequeño */
+  font-size: 0.9em;
   border-radius: 5px;
   transition: background-color 0.3s;
 }
@@ -106,40 +108,74 @@ ul {
 }
 
 .landing-page .content {
-  padding: 20px;
+  padding: 100px 20px 20px; /* Asegura que el contenido no quede detrás del header */
   display: flex;
   justify-content: space-between;
 }
 
-.menu2 {
-  width: 300px; /* Ajustado para la barra lateral */
-  margin-right: 20px;
+.main-menu {
+  background: #3B82F6;
+  border-right: 1px solid #e5e5e5;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  overflow: hidden;
+  transition: width 0.3s;
+  z-index: 1001; /* Asegura que el main-menu esté por encima del header */
 }
 
-.circle {
-  margin-bottom: 10px;
+.main-menu:hover {
+  width: 250px;
 }
 
-.button-x {
+.main-menu > ul {
+  margin: 7px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.main-menu li {
+  position: relative;
+  display: block;
   width: 100%;
-  padding: 10px;
-  cursor: pointer;
-  border: 2px solid #7b7777;
-  text-align: center;
-  transition: background-color 0.3s, color 0.3s;
-  font-size: 14px;
-  background-color: #dadbdd;
-  color: #0033a0;
 }
 
-.button-x:hover {
-  background-color: #0033a0;
-  color: #edf1f5;
+.main-menu li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: #000000;
+  font-family: 'Arial';
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.main-menu li a:hover {
+  background-color: #62A9BD;
+  color: #fff;
+}
+
+.main-menu .nav-icon {
+  margin-right: 10px;
+}
+
+.main-menu .nav-text {
+  display: none;
+}
+
+.main-menu:hover .nav-text {
+  display: inline;
 }
 
 .container2 {
   display: flex;
   align-items: center;
+  margin-left: 300px; /* Ajuste para no quedar detrás del menú lateral */
 }
 
 .info {
@@ -147,7 +183,7 @@ ul {
 }
 
 .info h1 {
-  color: #0033a0; /* Azul EAFIT */
+  color: #0033a0;
   font-size: 44px;
 }
 
@@ -159,22 +195,20 @@ ul {
 }
 
 .image img {
-  max-width: 80%;
-  margin-top: -1px;
-  margin-left: 950px;
-
-
+  max-width: 105%;
 }
 
 footer {
-  background-color: #45C6D8;
+  background-color: #000000;
   color: white;
   text-align: center;
   padding: 4px 0;
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left: 60px; /* Desplaza el footer para no superponerse al main-menu */
+  width: calc(100% - 60px);
   height: 65px;
+  z-index: 1000;
 }
 
 footer .logo {
@@ -182,137 +216,8 @@ footer .logo {
   max-width: 100px;
   vertical-align: middle;
 }
+
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
-.fa-2x {
-font-size: 2em;
-}
-.fa {
-position: relative;
-display: table-cell;
-width: 60px;
-height: 36px;
-text-align: center;
-vertical-align: middle;
-font-size:20px;
-}
-
-
-.main-menu:hover,nav.main-menu.expanded {
-width:250px;
-overflow:visible;
-}
-
-.main-menu {
-background:#6E76AB;
-border-right:1px solid #e5e5e5;
-position:absolute;
-top:0;
-bottom:0;
-height:123%;
-left:0;
-width:60px;
-overflow:hidden;
--webkit-transition:width .05s linear;
-transition:width .05s linear;
-z-index:1000;
-}
-
-.main-menu>ul {
-margin:7px 0;
-}
-
-.main-menu li {
-position:relative;
-display:block;
-width:250px;
-}
-
-.main-menu li>a {
-position:relative;
-display:table;
-border-collapse:collapse;
-border-spacing:0;
-color:#e5e5e5;
- font-family: arial;
-font-size: 14px;
-text-decoration:none;
--webkit-transition:all .1s linear;
-transition:all .1s linear;
-  
-}
-
-.main-menu .nav-icon {
-position:relative;
-display:table-cell;
-width:60px;
-height:36px;
-text-align:center;
-vertical-align:middle;
-font-size:18px;
-}
-
-.main-menu .nav-text {
-position:relative;
-display:table-cell;
-vertical-align:middle;
-width:190px;
-  font-family: 'Titillium Web', sans-serif;
-}
-
-.main-menu>ul.logout {
-position:absolute;
-left:0;
-bottom:0;
-}
-
-.no-touch .scrollable.hover {
-overflow-y:hidden;
-}
-
-.no-touch .scrollable.hover:hover {
-overflow-y:auto;
-overflow:visible;
-}
-
-a:hover,a:focus {
-text-decoration:none;
-}
-
-nav {
--webkit-user-select:none;
--moz-user-select:none;
--ms-user-select:none;
--o-user-select:none;
-user-select:none;
-}
-
-nav ul,nav li {
-outline:0;
-margin:0;
-padding:0;
-}
-.main-menu li:hover>a,nav.main-menu li.active>a,.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,.dashboard-page nav.dashboard-menu ul li.active a {
-color:#fff;
-background-color:#62A9BD;
-}
-
-
-.area {
-float: left;
-background: #e2e2e2;
-width: 100%;
-height: 100%;
-}
-@font-face {
-  font-family: 'Titillium Web';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
-}
-
-
-
 
 /* End Landing Page */

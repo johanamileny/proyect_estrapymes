@@ -1,29 +1,38 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { AuthService } from '../../services/auth.service'; // Asegúrate de que la ruta sea correcta
-import { Router, RouterModule } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service'; // Ajusta la ruta según sea necesario
+import { Router } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'] // Corregido styleUrls en lugar de styleUrl
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  username: string = '';
-  password: string = '';
+  loginForm: FormGroup;
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
+    this.loginForm = this.fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
   login() {
-    console.log(this.username, this.password);
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    const { username, password } = this.loginForm.value;
 
     let isLogin = false;
 
     try {
-      isLogin = this.authService.login(this.username, this.password);
+      isLogin = this.authService.login(username, password);
     } catch (error) {
       console.log(error);
       this.errorMessage = (error as any).message;
