@@ -25,67 +25,67 @@
       <nav class="main-menu">
         <ul>
           <li>
-            <a href="#welcome" class="nav-link">
+            <a href="#welcome" class="nav-link font-bold">
               <i class="fa fa-home fa-2x nav-icon"></i>
               <span class="nav-text">Bienvenido a Estramipyme</span>
             </a>
           </li>
           <li>
-            <a href="#bibliography" class="nav-link">
-              <i class="fa fa-comments fa-2x nav-icon"></i>
+            <a href="#bibliography" class="nav-link font-bold">
+              <i class="fa fa-comments fa-2x nav-icon "></i>
               <span class="nav-text">Bibliografía del autor</span>
             </a>
           </li>
           <li>
-            <a href="#downloads" class="nav-link">
+            <a href="#downloads" class="nav-link font-bold">
               <i class="fa fa-download fa-2x nav-icon"></i>
               <span class="nav-text">Descargas del libro</span>
             </a>
           </li>
           <li>
-            <a href="#book" class="nav-link">
-              <i class="fa fa-book fa-2x nav-icon"></i>
+            <a class="nav-link font-bold"(click)="navigateToLogin()">
+              <i class="fa fa-book fa-2x nav-icon "></i>
               <span class="nav-text">Acceder al libro completo</span>
             </a>
           </li>
           <li>
-            <a href="#community" class="nav-link">
+            <a class="nav-link font-bold" (click)="navigateToLogin()">
               <i class="fa-solid fa-users fa-2x nav-icon"></i>
               <span class="nav-text">Foro de la comunidad</span>
             </a>
           </li>
           <li>
-            <a href="#events" class="nav-link">
+            <a class="nav-link font-bold" (click)="navigateToLogin()">
               <i class="fa fa-calendar-days fa-2x nav-icon"></i>
               <span class="nav-text">Eventos y talleres</span>
             </a>
           </li>
           <li>
-            <a href="#faq" class="nav-link">
+            <a class="nav-link font-bold" (click)="navigateToLogin()">
               <i class="fa-solid fa-headset fa-2x nav-icon"></i>
               <span class="nav-text">FAQ y Asesorías</span>
             </a>
           </li>
           <li>
-            <a href="#connect" class="nav-link">
+            <a href="#connect" class="nav-link font-bold">
               <i class="fa-solid fa-handshake fa-2x nav-icon"></i>
               <span class="nav-text">Conéctate con EAFIT</span>
             </a>
           </li>
           <li>
-            <a href="#about" class="nav-link">
+            <a href="#about" class="nav-link font-bold">
               <i class="fa-solid fa-circle-info fa-2x nav-icon"></i>
               <span class="nav-text">Sobre Nosotros</span>
             </a>
           </li>
           <li>
-            <a href="#contact" class="nav-link">
+            <a href="#contact" class="nav-link font-bold">
               <i class="fa-solid fa-comment-sms fa-2x nav-icon"></i>
               <span class="nav-text">Contáctanos</span>
             </a>
           </li>
           <li>
-            <a href="#social" class="nav-link">
+            <a href="#social" class="nav-link font-bold">
               <i class="fa fa-cogs fa-2x nav-icon"></i>
               <span class="nav-text">Nuestras Redes Sociales</span>
             </a>
@@ -93,24 +93,36 @@
         </ul>
       </nav>
 
-      <div id="welcome" class="container2">
+      <div class="container2 scroll-trigger">
         <div class="main-text">
           <h1>¡Despierta el Potencial de Tu PYME!</h1>
-          <p>En Estramipyme, estamos aquí para llevar tu negocio al siguiente nivel con estrategias innovadoras y herramientas poderosas. ¡Comienza ahora y descubre cómo puedes transformar tu empresa y alcanzar nuevas alturas!</p>
+          <p>En Estramipyme, estamos aquí para llevar tu negocio al 
+            siguiente nivel con estrategias innovadoras y herramientas poderosas. 
+            ¡Comienza ahora y descubre cómo puedes transformar tu empresa y alcanzar nuevas alturas!</p>
           <p><strong>Inicia tu viaje: Explora, Conoce, Actualiza, Integra</strong></p>
         </div>
         <div class="image-container">
           <img src="assets/estramipyme.png" alt="Imagen de Estramipymes">
         </div>
       </div>
+      <div id="bibliography" class="container2 scroll-trigger">
+        <div class="main-text2">
+          <h1>Biografía del autor/a</h1>
+          <h2>Luz María Rivas-Montoya, Universidad EAFIT</h2>
+           <p>Doctora en Administración y magíster en Ciencias de la Administración de la Universidad EAFIT,
+             magíster en Administración del Instituto Tecnológico de Monterrey
+             y la Universidad Autónoma de Bucaramanga (UNAB) y economista de la Universidad Autónoma de Manizales
+             . Actualmente, es profesora de la Universidad EAFIT, donde coordina el área de Estrategia
+             y dicta las asignaturas de Riesgo Estratégico, Estrategia I, Estrategia y Modelos de Negocios, Teoría de la Estrategia
+             y Política de Empresas. Hace parte del grupo de investigación Administración y Organizaciones (A1 según Minciencias).Sus principales
+            temas de interés son el riesgo estratégico, los modelos de negocios, la estrategia como práctica y la estrategia corporativa.</p> 
+        </div>
+      </div>
     </div>
-
     <footer>
       <img src="assets/eafit.png" alt="Logo de Estramipymes" class="logo">
       <p>&copy; 2024 Universidad EAFIT. Todos los derechos reservados.</p>
     </footer>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required,Validators.email],
       password: ['', Validators.required]
     });
   }
@@ -27,12 +27,12 @@ export class LoginComponent {
       return;
     }
 
-    const { username, password } = this.loginForm.value;
+    const { email, password } = this.loginForm.value;
 
     let isLogin = false;
 
     try {
-      isLogin = this.authService.login(username, password);
+      isLogin = this.authService.login(email, password);
     } catch (error) {
       console.log(error);
       this.errorMessage = (error as any).message;

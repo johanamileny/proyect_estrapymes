@@ -7,32 +7,25 @@ import { Router } from '@angular/router';
 export class AuthService {
   constructor(private router: Router) {}
 
-  // Actualiza el método register para que sea una función síncrona
   register(userData: any) {
-    // Guarda los datos del usuario en el localStorage
-    localStorage.setItem('user', JSON.stringify(userData));
-    
-    // Redirige al usuario a la página de inicio de sesión
+    localStorage.setItem('email', JSON.stringify(userData));
     this.router.navigate(['/login']);
   }
 
-  // Método login para validar las credenciales del usuario
   login(email: string, password: string): boolean {
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
-    if (user.email === email && user.password === password) {
+    const storedEmail = JSON.parse(localStorage.getItem('email') || '{}');
+    if (storedEmail.email === email && storedEmail.password === password) {
       localStorage.setItem('isLoggedIn', 'true');
-      this.router.navigate(['/homepage']); // Redirige a la página de inicio después del login exitoso
+      this.router.navigate(['/homepage']);
       return true;
     }
     return false;
   }
 
-  // Verifica si el usuario está autenticado
   isLoggedIn(): boolean {
     return localStorage.getItem('isLoggedIn') === 'true';
   }
 
-  // Elimina la información del usuario del localStorage y redirige al login
   logout() {
     localStorage.removeItem('isLoggedIn');
     this.router.navigate(['/login']);

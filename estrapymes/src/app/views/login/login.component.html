@@ -3,13 +3,13 @@
         <h2 class="text-center mb-6 font-extrabold text-3xl text-blue-500">Inicio de Sesión</h2>
 
         <div class="relative mb-0">
-            <i class="fa-solid fa-user absolute left-4 top-4 text-gray-500"></i>
+            <i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-500"></i>
             <span class="text-red-500">{{errorMessage}}</span>
             <form [formGroup]="loginForm" (ngSubmit)="login()" class="flex flex-col">
                 <input class="mb-4 w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
                        type="text" 
-                       formControlName="username"
-                       placeholder="Usuario">
+                       formControlName="email"
+                       placeholder="Correo">
 
                 <div class="relative mb-4">
                     <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
@@ -26,6 +26,7 @@
                         type="submit">
                         Iniciar Sesión 
                     </button>
+                    
 
                     <a href="/forgot-password" class="text-white font-bold hover:underline text-sm">
                         ¿Olvidaste tu contraseña?
