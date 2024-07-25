@@ -6,13 +6,15 @@ import { HomepageComponent } from './views/homepage/homepage.component';
 import { LoginComponent } from './views/login/login.component';
 import { AuthGuard} from './shared/auth.guard';
 import { AdmindashboardComponent } from './views/admindashboard/admindashboard.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'homepage', component: HomepageComponent},
   { path: 'admindashboard', component:AdmindashboardComponent },
-  { path: '', redirectTo: '/homepage', pathMatch: 'full' }
+  { path: '', redirectTo: '/homepage', pathMatch: 'full' },
+  {path: 'nav-menu', component:NavMenuComponent}
 ];
 
 @NgModule({

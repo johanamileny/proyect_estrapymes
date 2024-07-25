@@ -1,0 +1,76 @@
+.main-menu {
+    background: #3B82F6;
+    border-right: 1px solid #e5e5e5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    overflow: hidden;
+    transition: width 0.3s;
+    z-index: 1001; /* Asegura que el main-menu esté por encima del header */
+  }
+  
+  .main-menu:hover {
+    width: 250px;
+  }
+  
+  .main-menu > ul {
+    margin: 1px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .main-menu li {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  
+  .main-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    color: #fff;
+    font-family: 'Arial';
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .main-menu li a:hover {
+    background-color: #62A9BD;
+    color: #fff;
+  }
+  
+  .main-menu .nav-icon {
+    margin-right: 10px;
+  }
+  
+  .main-menu .nav-text {
+    opacity: 0; /* Inicialmente invisible */
+    transform: translateX(-20px); /* Inicialmente desplazado a la izquierda */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+    height: 0; /* Oculta el contenido cuando no está visible */
+    line-height: 0; /* Ajuste para asegurar que el contenido no se desborde */
+    margin-left: 10px;
+  }
+  
+  .main-menu:hover .nav-text {
+    opacity: 1; /* Visible al hacer hover */
+    transform: translateX(0); /* Desplazado a la posición original */
+    height: auto; /* Permite que el contenido tome el espacio necesario */
+    line-height: normal; /* Restablece el line-height */
+    margin-left: 10px; /* Espacio adicional si es necesario */
+  }
+  
+  
+
+  
+ 
+  @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);

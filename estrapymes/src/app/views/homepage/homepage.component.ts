@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavMenuComponent } from '../../nav-menu/nav-menu.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [],
+  imports: [NavMenuComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })
