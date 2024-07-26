@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   providers: [provideCharts(withDefaultRegisterables())],
-  bootstrap: [AppComponent],
+  bootstrap: [],
   declarations: [],
   imports: [
     CommonModule

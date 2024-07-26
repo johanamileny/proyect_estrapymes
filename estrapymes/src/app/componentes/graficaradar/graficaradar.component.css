@@ -1,0 +1,12 @@
+/* graficaradar.component.css */
+:host {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  canvas {
+    width: 50% !important;
+    height: 50% !important;
+  }
+  
