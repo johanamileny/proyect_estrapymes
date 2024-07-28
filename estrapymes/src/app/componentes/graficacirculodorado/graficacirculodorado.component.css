@@ -1,0 +1,40 @@
+/* Estilo general para el contenedor del gráfico */
+.chart-container {
+  width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+  height: auto; /* Ajusta la altura automáticamente */
+  max-width: 800px; /* Tamaño máximo aumentado para evitar que el contenedor sea demasiado pequeño */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  display: flex;
+  justify-content: center; /* Centra el SVG horizontalmente dentro del contenedor */
+  align-items: center; /* Centra el SVG verticalmente dentro del contenedor */
+  position: relative; /* Asegura que el contenedor pueda ser posicionado si es necesario */
+}
+
+/* Estilo para el lienzo del gráfico */
+svg {
+  width: 100%; /* Ajusta el SVG al ancho del contenedor */
+  height: auto; /* Mantiene la proporción del SVG */
+}
+
+/* Media queries para ajustar el tamaño del gráfico en diferentes dispositivos */
+
+/* Para pantallas de menos de 600px (móviles) */
+@media (max-width: 600px) {
+  .chart-container {
+    height: 300px; /* Altura moderada para móviles */
+  }
+}
+
+/* Para pantallas entre 601px y 900px (tablets) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .chart-container {
+    height: 400px; /* Altura moderada para tablets */
+  }
+}
+
+/* Para pantallas mayores de 901px (escritorios) */
+@media (min-width: 901px) {
+  .chart-container {
+    height: 500px; /* Altura moderada para escritorios */
+  }
+}

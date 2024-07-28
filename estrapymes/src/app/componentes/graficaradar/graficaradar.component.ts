@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart, ChartType } from 'chart.js/auto';
 
 @Component({
@@ -6,24 +6,24 @@ import { Chart, ChartType } from 'chart.js/auto';
   standalone: true,
   imports: [],
   templateUrl: './graficaradar.component.html',
-  styleUrl: './graficaradar.component.css',
+  styleUrls: ['./graficaradar.component.css'], // Cambiado a styleUrls
 })
 export class GraficaradarComponent implements OnInit {
 
   public chart: Chart;
-  ngOnInit(): void {
 
+  ngOnInit(): void {
     const data = {
       labels: [
         'Conocimiento del Cliente',
-        'Conocimiento del Negocio	',
+        'Conocimiento del Negocio',
         'Alineación en la comunicación interna',
         'Salud Financiera',
         'Coherencia del modelo de negocio',
       ],
       datasets: [{
         label: 'empresa uno',
-        data: [2,3, 1, 1, 1],
+        data: [,4, 4, 4, 4],
         fill: true,
         backgroundColor: 'rgba(255, 99, 132, 0.2)',
         borderColor: 'rgb(255, 99, 132)',
@@ -44,10 +44,13 @@ export class GraficaradarComponent implements OnInit {
       }]
     };
 
-    this.chart = new Chart("chart",{
-      type : 'radar' as ChartType,
-       data 
-  })
-    
+    this.chart = new Chart('chart', {
+      type: 'radar' as ChartType,
+      data,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false, // Permite que el gráfico se ajuste al tamaño del contenedor
+      }
+    });
   }
-    }
+}
