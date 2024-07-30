@@ -1,1 +1,6 @@
-<p>grafic-bowman works!</p>
+<div class="clock">
+    <div class="quadrant" *ngFor="let quadrant of quadrants">
+      <h2>{{ quadrant.name }}</h2>
+      <p>{{ quadrant.description }}</p>
+    </div>
+  </div>
