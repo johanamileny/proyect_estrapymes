@@ -1,13 +1,13 @@
 /* Estilo general para el contenedor del gráfico */
 .chart-container {
-  width: 55%;
-  height: 600px; /* Altura moderada */
+  width: 70%;
+  height: 340px; /* Altura moderada */
   max-width: 800px; /* Tamaño máximo */
   margin: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 500px;
+  margin-left: 620px;
 }
 
 /* Estilo para el lienzo del gráfico */
@@ -19,14 +19,14 @@ canvas {
 /* Estilo para la tabla de datos */
 .table-container {width: 400px;
   display: flex;
-  margin-top: -675px;
-  margin-left: 50px;
+  margin-top: -412px;
+  margin-left: 150px;
   border-radius: 6px;
   overflow: hidden; /* Para redondear las esquinas */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
 }
 
-}
+
 
 table {
   width: 100%;

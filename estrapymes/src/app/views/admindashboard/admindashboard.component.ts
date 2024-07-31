@@ -14,7 +14,7 @@ import { GraficBowmanComponent } from '../../componentes/grafic-bowman/grafic-bo
   selector: 'app-admindashboard',
   standalone: true,
   imports: [BaseChartDirective,GraficaradarComponent,GraficarelojestraComponent,
-    GraficacirculodoradoComponent,avMenuAdministradorComponent,UserListComponent,UserDetailComponent,GraficBowmanComponent],
+    GraficacirculodoradoComponent,NavMenuAdministradorComponent,UserListComponent,UserDetailComponent,GraficBowmanComponent],
   templateUrl: './admindashboard.component.html',
   styleUrl: './admindashboard.component.scss'
 })
