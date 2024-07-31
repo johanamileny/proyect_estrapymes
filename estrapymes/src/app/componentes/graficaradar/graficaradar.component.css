@@ -17,11 +17,15 @@ canvas {
 }
 
 /* Estilo para la tabla de datos */
-.table-container {
-  width: 400px;
+.table-container {width: 400px;
   display: flex;
   margin-top: -675px;
   margin-left: 50px;
+  border-radius: 6px;
+  overflow: hidden; /* Para redondear las esquinas */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+}
+
 }
 
 table {
@@ -30,19 +34,39 @@ table {
 }
 
 table, th, td {
-  border: 1px solid #ddd;
+  border: 1px solid #ddd; /* Borde más ligero */
 }
 
 th, td {
-  padding: 8px;
-  text-align: center;
+  padding: 6px; /* Reducción del padding */
+  text-align: center; /* Centrado de texto */
+  font-size: 12px; /* Fuente más pequeña */
 }
 
 th {
   background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+  color: #555;
+}
+
+tr:nth-child(even) td {
+  background-color: #f9f9f9; /* Color alternante para filas */
+}
+
+tr:hover td {
+  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
 }
 
 input[type="number"] {
-  width: 60px;
+  width: 60px; /* Ancho reducido */
   text-align: center;
+  padding: 2px; /* Padding reducido */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px; /* Fuente más pequeña */
 }
