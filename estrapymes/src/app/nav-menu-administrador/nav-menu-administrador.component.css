@@ -1,7 +1,7 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
-.main-menu {
+.main-menu-administrator {
     background: #3B82F6;
     border-right: 1px solid #e5e5e5;
     position: fixed;
@@ -14,20 +14,20 @@
     z-index: 1001; /* Asegura que el main-menu esté por encima del header */
 }
 
-.main-menu:hover {
+.main-menu-administrator:hover {
     width: 250px;
 }
 
-.main-menu:hover ~ #header {
+.main-menu-administrator:hover ~ #header {
     left: 250px;
     width: calc(100% - 250px);
 }
 
-.main-menu:hover ~ .landing-page {
+.main-menu-administrator:hover ~ .landing-page {
     margin-left: 250px;
 }
 
-.main-menu > ul {
+.main-menu-administrator > ul {
     margin: 1px 0;
     display: flex;
     flex-direction: column;
@@ -35,13 +35,13 @@
     height: 100%;
 }
 
-.main-menu li {
+.main-menu-administrator li {
     position: relative;
     display: block;
     width: 100%;
 }
 
-.main-menu li a {
+.main-menu-administrator li a {
     display: flex;
     align-items: center;
     padding: 10px 14px;
@@ -52,16 +52,16 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.main-menu li a:hover {
+.main-menu-administrator li a:hover {
     background-color: #62A9BD;
     color: #fff;
 }
 
-.main-menu .nav-icon {
+.main-menu-administrator .nav-icon {
     margin-right: 10px;
 }
 
-.main-menu .nav-text {
+.main-menu-administrator .nav-text {
     opacity: 0; /* Inicialmente invisible */
     transform: translateX(-20px); /* Inicialmente desplazado a la izquierda */
     overflow: hidden; /* Asegura que el contenido no se desborde */
@@ -72,7 +72,7 @@
     margin-left: 10px;
 }
 
-.main-menu:hover .nav-text {
+.main-menu-administrator:hover .nav-text {
     opacity: 1; /* Visible al hacer hover */
     transform: translateX(0); /* Desplazado a la posición original */
     height: auto; /* Permite que el contenido tome el espacio necesario */
