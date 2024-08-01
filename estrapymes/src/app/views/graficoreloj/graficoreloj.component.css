@@ -1,0 +1,8 @@
+
+  /* graficoreloj.component.css */
+.chart-container {
+    position: relative;
+    height: 500px; /* Ajusta la altura según sea necesario */
+    width: 600px;
+  }
+  
