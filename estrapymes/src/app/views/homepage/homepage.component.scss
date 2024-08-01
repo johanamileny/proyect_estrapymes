@@ -315,7 +315,7 @@ h2 {
 /* End Landing Page */
 
 /* Scroll Animation */
-/* Scroll Animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -327,11 +327,21 @@ h2 {
   }
 }
 
+/* Estilo inicial para los elementos que se activarán con el scroll */
 .scroll-trigger {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  transform: translateY(20px); /* Inicialmente desplazado */
 }
 
+/* Aplicar animación cuando el elemento está visible */
 .scroll-trigger.visible {
   opacity: 1;
+  transform: translateY(0); /* Restablecer la posición */
+  animation: fadeIn 1s forwards;
+}
+
+/* Clase para animar cuando se hace clic */
+.scroll-trigger.animate {
+  animation: fadeIn 1s forwards;
 }
