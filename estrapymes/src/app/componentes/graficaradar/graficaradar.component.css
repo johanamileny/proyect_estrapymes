@@ -1,0 +1,72 @@
+/* Estilo general para el contenedor del gráfico */
+.chart-container {
+  width: 70%;
+  height: 340px; /* Altura moderada */
+  max-width: 800px; /* Tamaño máximo */
+  margin: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 620px;
+}
+
+/* Estilo para el lienzo del gráfico */
+canvas {
+  width: 100% !important; /* Ajusta el canvas al ancho del contenedor */
+  height: 100% !important; /* Ajusta la altura del canvas al contenedor */
+}
+
+/* Estilo para la tabla de datos */
+.table-container {width: 400px;
+  display: flex;
+  margin-top: -412px;
+  margin-left: 150px;
+  border-radius: 6px;
+  overflow: hidden; /* Para redondear las esquinas */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+}
+
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd; /* Borde más ligero */
+}
+
+th, td {
+  padding: 6px; /* Reducción del padding */
+  text-align: center; /* Centrado de texto */
+  font-size: 12px; /* Fuente más pequeña */
+}
+
+th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+}
+
+td {
+  background-color: #fff;
+  color: #555;
+}
+
+tr:nth-child(even) td {
+  background-color: #f9f9f9; /* Color alternante para filas */
+}
+
+tr:hover td {
+  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
+}
+
+input[type="number"] {
+  width: 60px; /* Ancho reducido */
+  text-align: center;
+  padding: 2px; /* Padding reducido */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 12px; /* Fuente más pequeña */
+}

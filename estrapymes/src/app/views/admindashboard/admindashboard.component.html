@@ -1,1 +1,37 @@
-<p>admindashboard works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Administrador</title>
+ 
+</head>
+<body>
+    <app-nav-menu-administrador></app-nav-menu-administrador>
+    
+    <header>
+        <a href="#" class="logo">
+            <b>Portal Administrador</b><br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
+        </a>
+    </header>
+
+    <div class="landing-page">
+        <div class="charts-container">
+            <div class="chart"><app-graficaradar></app-graficaradar></div>
+            <div class="chart"><app-graficarelojestra></app-graficarelojestra></div>
+            <div class="chart"><app-grafic-bowman></app-grafic-bowman></div>
+            <div class ="chart"><app-graficoreloj></app-graficoreloj>
+            </div>
+        </div>
+    </div>
+</body>
+
+  
+
+
+<!----
+<div class="user-section">
+    <app-user-list (userSelected)="selectedUser = $event"></app-user-list>
+    <app-user-detail [user]="selectedUser" (userUpdated)="updateUser($event)"></app-user-detail>
+  </div>
+-->
