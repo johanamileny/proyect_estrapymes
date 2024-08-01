@@ -37,7 +37,7 @@ export class GraficorelojComponent implements OnInit {
     }
 
     const element = this.chartContainer.nativeElement;
-    const margin = { top: 20, right: 50, bottom: 40, left: 50 };
+    const margin = { top: 20, right: 30, bottom: 40, left: 30 };
     const width = element.offsetWidth - margin.left - margin.right;
     const height = element.offsetHeight - margin.top - margin.bottom;
 
@@ -52,12 +52,23 @@ export class GraficorelojComponent implements OnInit {
     const x = d3.scaleLinear().domain([-1.5, 1.5]).range([0, width]);
     const y = d3.scaleLinear().domain([-1.5, 1.5]).range([height, 0]);
 
+    // Añadir los ejes sin líneas de cuadrícula
     svg
       .append('g')
+      .attr('class', 'axis')
       .attr('transform', `translate(0,${height})`)
-      .call(d3.axisBottom(x));
+      .call(d3.axisBottom(x)
+        .tickSize(0) // Elimina las líneas de los cuadrantes
+        .tickPadding(10) // Ajusta el espacio entre las etiquetas y los ejes
+      );
 
-    svg.append('g').call(d3.axisLeft(y));
+    svg
+      .append('g')
+      .attr('class', 'axis')
+      .call(d3.axisLeft(y)
+        .tickSize(0) // Elimina las líneas de los cuadrantes
+        .tickPadding(10) // Ajusta el espacio entre las etiquetas y los ejes
+      );
 
     // Añadir el punto central
     svg
@@ -65,30 +76,7 @@ export class GraficorelojComponent implements OnInit {
       .attr('cx', x(0))
       .attr('cy', y(0))
       .attr('r', 10)
-      .style('fill', 'black');
-
-    // Añadir las flechas
-    data.arrows.forEach((arrow: any) => {
-      svg
-        .append('line')
-        .attr('x1', x(0))
-        .attr('y1', y(0))
-        .attr('x2', x(arrow.x))
-        .attr('y2', y(arrow.y))
-        .attr('stroke', 'black')
-        .attr('stroke-width', 2)
-        .attr('marker-end', 'url(#arrow)');
-
-      // Añadir las etiquetas de las flechas
-      svg
-        .append('text')
-        .attr('x', x(arrow.x))
-        .attr('y', y(arrow.y))
-        .attr('dy', -5)
-        .attr('text-anchor', 'middle')
-        .style('font-size', '12px')
-        .text(arrow.label);
-    });
+      .style('fill', '#0033A0'); // Azul oscuro EAFIT
 
     // Definir el marcador de flecha
     svg
@@ -103,44 +91,46 @@ export class GraficorelojComponent implements OnInit {
       .attr('orient', 'auto')
       .append('path')
       .attr('d', 'M 0 0 L 10 5 L 0 10 z')
-      .attr('fill', 'black');
+      .attr('class', 'marker');
 
-    // Añadir flechas en los ejes X e Y
-    svg
-      .append('line')
-      .attr('x1', x(-1.5))
-      .attr('y1', y(0))
-      .attr('x2', x(1.5))
-      .attr('y2', y(0))
-      .attr('stroke', 'black')
-      .attr('stroke-width', 2)
-      .attr('marker-end', 'url(#arrow)');
+    // Añadir las flechas y etiquetas desde el punto central hacia cada parte del plano cartesiano
+    const positions = [
+      { x: 1.5, y: 0, label: 'Estrategias destinadas al fracaso' },   // Flecha hacia la derecha
+      { x: -1.5, y: 0, label: 'Bajo precio' },  // Flecha hacia la izquierda
+      { x: 0, y: 1.5, label: 'Diferenciación' },   // Flecha hacia arriba
+      { x: 0, y: -1.5, label: 'Precio' },  // Flecha hacia abajo
+      { x: 1.5, y: 1.5, label: 'Diferenciación segmentada' }, // Flecha hacia arriba derecha
+      { x: -1.5, y: 1.5, label: 'Híbrida' }, // Flecha hacia arriba izquierda
+      { x: 1.5, y: -1.5, label: 'Estrategias destinadas al fracaso' }, // Flecha hacia abajo derecha
+      { x: -1.5, y: -1.5, label: 'Bajo precio/valor añadido' } // Flecha hacia abajo izquierda
+    ];
 
-    svg
-      .append('line')
-      .attr('x1', x(0))
-      .attr('y1', y(-1.5))
-      .attr('x2', x(0))
-      .attr('y2', y(1.5))
-      .attr('stroke', 'black')
-      .attr('stroke-width', 2)
-      .attr('marker-end', 'url(#arrow)');
+    positions.forEach(pos => {
+      svg
+        .append('line')
+        .attr('x1', x(0))
+        .attr('y1', y(0))
+        .attr('x2', x(pos.x))
+        .attr('y2', y(pos.y))
+        .attr('stroke', '#333333') // Gris oscuro para las flechas
+        .attr('stroke-width', 1.5) // Ancho consistente
+        .attr('marker-end', 'url(#arrow)');
 
-    // Flecha en el eje X, en la parte inferior
-    svg
-      .append('line')
-      .attr('x1', x(-1.5))
-      .attr('y1', y(-1.5))
-      .attr('x2', x(1.5))
-      .attr('y2', y(-1.5))
-      .attr('stroke', 'black')
-      .attr('stroke-width', 2)
-      .attr('marker-end', 'url(#arrow)');
+      // Añadir etiquetas para las flechas
+      svg
+        .append('text')
+        .attr('x', x(pos.x))
+        .attr('y', y(pos.y))
+        .attr('dy', -5)
+        .attr('text-anchor', 'middle')
+        .text(pos.label);
+    });
 
     // Añadir la elipse
     const oval = data.oval;
     svg
       .append('ellipse')
+      .attr('class', 'ellipse') // Aplicar clase CSS para el estilo
       .attr('cx', x(oval.center.x))
       .attr('cy', y(oval.center.y))
       .attr('rx', x(oval.radiusX) - x(0))
@@ -153,17 +143,20 @@ export class GraficorelojComponent implements OnInit {
       .style('stroke', 'black')
       .style('stroke-dasharray', '1,1');
 
-    // Añadir la posición deseada (estrella)
-    const star = data.desiredPosition.coordinates;
+    // Añadir la estrella en el cuadrante inferior izquierdo
+    const star = {
+      x: -0.5, // Ajusta según necesites para ubicar la estrella en el cuadrante inferior izquierdo
+      y: 0.5
+    };
     svg
       .append('path')
       .attr(
-        'd','M256,32L317.5,191.8L480,191.8L347.2,287.2L408.7,447L256,351.8L103.3,447L164.8,287.2L32,191.8L194.5,191.8L256,32z'
+        'd', 'M256,32L317.5,191.8L480,191.8L347.2,287.2L408.7,447L256,351.8L103.3,447L164.8,287.2L32,191.8L194.5,191.8L256,32z'
       )
       .attr(
         'transform',
-        `translate(${x(star.x) - 12}, ${y(star.y) - 12}) scale(0.1)`
+        `translate(${x(star.x)}, ${y(star.y)}) scale(0.1)`
       )
-      .attr('fill', 'yellow');
+      .attr('fill', '#F7D700'); // Amarillo
   }
 }

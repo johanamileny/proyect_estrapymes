@@ -1,13 +1,25 @@
+/* Contenedor principal para alinear la tabla y el gráfico horizontalmente */
+.container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; /* Asegura que la tabla y el gráfico estén en los extremos opuestos */
+  padding: 20px; /* Espaciado alrededor del contenedor */
+  margin-top: 500px; /* Espacio adicional en la parte superior */
+}
+
 /* Estilo general para el contenedor del gráfico */
 .chart-container {
-  width: 70%;
-  height: 340px; /* Altura moderada */
-  max-width: 800px; /* Tamaño máximo */
-  margin: 80px;
+  width: 60%;
+  height: 400px; /* Altura ajustada para una mejor visualización */
+  max-width: 900px; /* Tamaño máximo */
+  background-color: #f9f9f9; /* Fondo del contenedor para un contraste más suave */
+  border: 1px solid #ddd; /* Borde ligero alrededor del contenedor */
+  border-radius: 8px; /* Bordes redondeados para un aspecto moderno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para el contenedor del gráfico */
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 620px;
+  margin-top: 20px; /* Margen superior para separar del encabezado */
 }
 
 /* Estilo para el lienzo del gráfico */
@@ -17,17 +29,16 @@ canvas {
 }
 
 /* Estilo para la tabla de datos */
-.table-container {width: 400px;
-  display: flex;
-  margin-top: -412px;
-  margin-left: 150px;
-  border-radius: 6px;
+.table-container {
+  width: 35%;
+  max-width: 600px; /* Tamaño máximo para la tabla */
+  border-radius: 8px;
   overflow: hidden; /* Para redondear las esquinas */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más profesional */
+  margin-top: 20px; /* Margen superior para separar del encabezado */
 }
 
-
-
+/* Estilos de la tabla */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -38,9 +49,9 @@ table, th, td {
 }
 
 th, td {
-  padding: 6px; /* Reducción del padding */
+  padding: 10px; /* Padding ajustado para mejor legibilidad */
   text-align: center; /* Centrado de texto */
-  font-size: 12px; /* Fuente más pequeña */
+  font-size: 14px; /* Fuente más grande para mejor legibilidad */
 }
 
 th {
@@ -59,14 +70,14 @@ tr:nth-child(even) td {
 }
 
 tr:hover td {
-  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
+  background-color: #e0e0e0; /* Color de fondo al pasar el mouse */
 }
 
+/* Estilo para los inputs */
 input[type="number"] {
-  width: 60px; /* Ancho reducido */
-  text-align: center;
-  padding: 2px; /* Padding reducido */
+  width: 100%; /* Ajusta el ancho al tamaño de la celda */
+  padding: 4px; /* Padding ajustado */
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 12px; /* Fuente más pequeña */
+  font-size: 14px; /* Fuente más grande para mejor visibilidad */
 }
