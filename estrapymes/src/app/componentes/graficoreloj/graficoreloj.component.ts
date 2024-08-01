@@ -37,7 +37,7 @@ export class GraficorelojComponent implements OnInit {
     }
 
     const element = this.chartContainer.nativeElement;
-    const margin = { top: 20, right: 30, bottom: 40, left: 50 };
+    const margin = { top: 20, right: 50, bottom: 40, left: 50 };
     const width = element.offsetWidth - margin.left - margin.right;
     const height = element.offsetHeight - margin.top - margin.bottom;
 
@@ -49,8 +49,8 @@ export class GraficorelojComponent implements OnInit {
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
 
-    const x = d3.scaleLinear().domain([-1.2, 1.2]).range([0, width]);
-    const y = d3.scaleLinear().domain([-1.2, 1.2]).range([height, 0]);
+    const x = d3.scaleLinear().domain([-1.5, 1.5]).range([0, width]);
+    const y = d3.scaleLinear().domain([-1.5, 1.5]).range([height, 0]);
 
     svg
       .append('g')
@@ -104,6 +104,38 @@ export class GraficorelojComponent implements OnInit {
       .append('path')
       .attr('d', 'M 0 0 L 10 5 L 0 10 z')
       .attr('fill', 'black');
+
+    // Añadir flechas en los ejes X e Y
+    svg
+      .append('line')
+      .attr('x1', x(-1.5))
+      .attr('y1', y(0))
+      .attr('x2', x(1.5))
+      .attr('y2', y(0))
+      .attr('stroke', 'black')
+      .attr('stroke-width', 2)
+      .attr('marker-end', 'url(#arrow)');
+
+    svg
+      .append('line')
+      .attr('x1', x(0))
+      .attr('y1', y(-1.5))
+      .attr('x2', x(0))
+      .attr('y2', y(1.5))
+      .attr('stroke', 'black')
+      .attr('stroke-width', 2)
+      .attr('marker-end', 'url(#arrow)');
+
+    // Flecha en el eje X, en la parte inferior
+    svg
+      .append('line')
+      .attr('x1', x(-1.5))
+      .attr('y1', y(-1.5))
+      .attr('x2', x(1.5))
+      .attr('y2', y(-1.5))
+      .attr('stroke', 'black')
+      .attr('stroke-width', 2)
+      .attr('marker-end', 'url(#arrow)');
 
     // Añadir la elipse
     const oval = data.oval;

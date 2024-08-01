@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { GraficaradarComponent } from '../../componentes/graficaradar/graficaradar.component';
-import { GraficarelojestraComponent } from '../../componentes/graficarelojestra/graficarelojestra.component';
 import { NavMenuAdministradorComponent } from '../../nav-menu-administrador/nav-menu-administrador.component';
 import { UsersService } from '../../services/user.service';
 import { UserListComponent } from '../../componentes/user-list/user-list.component';
 import { User, UserDetailComponent } from '../../componentes/user-detail/user-detail.component';
 import { GraficBowmanComponent } from '../../componentes/grafic-bowman/grafic-bowman.component';
-import { GraficorelojComponent } from '../graficoreloj/graficoreloj.component';
+import { GraficorelojComponent } from '../../componentes/graficoreloj/graficoreloj.component';
 
 
 @Component({
   selector: 'app-admindashboard',
   standalone: true,
-  imports: [BaseChartDirective,GraficaradarComponent,GraficarelojestraComponent
+  imports: [BaseChartDirective,GraficaradarComponent
     ,NavMenuAdministradorComponent,UserListComponent,UserDetailComponent,GraficBowmanComponent,GraficorelojComponent],
   templateUrl: './admindashboard.component.html',
   styleUrl: './admindashboard.component.scss'
