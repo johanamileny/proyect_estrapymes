@@ -7,13 +7,18 @@ import { UserListComponent } from '../../componentes/user-list/user-list.compone
 import { User, UserDetailComponent } from '../../componentes/user-detail/user-detail.component';
 import { GraficBowmanComponent } from '../../componentes/grafic-bowman/grafic-bowman.component';
 import { GraficorelojComponent } from '../../componentes/graficoreloj/graficoreloj.component';
+import { GarficdescargasComponent } from '../../componentes/garficdescargas/garficdescargas.component';
+import { GarficcirculoComponent } from '../../componentes/graficacirculodorado/graficacirculodorado.component';
+
+
+
 
 
 @Component({
   selector: 'app-admindashboard',
   standalone: true,
   imports: [BaseChartDirective,GraficaradarComponent
-    ,NavMenuAdministradorComponent,UserListComponent,UserDetailComponent,GraficBowmanComponent,GraficorelojComponent],
+    ,NavMenuAdministradorComponent,UserListComponent,UserDetailComponent,GraficBowmanComponent,GraficorelojComponent,GarficdescargasComponent,GarficcirculoComponent],
   templateUrl: './admindashboard.component.html',
   styleUrl: './admindashboard.component.scss'
 })
