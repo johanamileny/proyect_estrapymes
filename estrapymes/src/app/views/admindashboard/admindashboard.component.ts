@@ -9,6 +9,7 @@ import { GraficBowmanComponent } from '../../componentes/grafic-bowman/grafic-bo
 import { GraficorelojComponent } from '../../componentes/graficoreloj/graficoreloj.component';
 import { GarficdescargasComponent } from '../../componentes/garficdescargas/garficdescargas.component';
 import { GarficcirculoComponent } from '../../componentes/graficacirculodorado/graficacirculodorado.component';
+import { Router } from '@angular/router';
 
 
 
@@ -26,7 +27,7 @@ import { GarficcirculoComponent } from '../../componentes/graficacirculodorado/g
 export class  AdmindashboardComponent {
   selectedUser!: User;
   users: User[] = [];
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService, private router: Router) {}
   // Método para actualizar el usuario en la lista
   updateUser(updatedUser: User) {
     const index = this.users.findIndex(user => user.id === updatedUser.id);
@@ -40,4 +41,14 @@ export class  AdmindashboardComponent {
       this.users = users;
     });
   }
+   // Navegar a la vista de login
+ navigateToLogin() {
+  this.router.navigate(['/login']);
 }
+
+}
+
+
+
+
+
