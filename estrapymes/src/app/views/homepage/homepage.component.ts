@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavMenuComponent } from '../../nav-menu/nav-menu.component';
+import { GarficdescargasComponent } from '../../componentes/garficdescargas/garficdescargas.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [NavMenuComponent],
+  imports: [NavMenuComponent, GarficdescargasComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.scss']
 })

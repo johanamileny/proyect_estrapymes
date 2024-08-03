@@ -1,55 +1,65 @@
 /* Estilo para el contenedor del gráfico */
+#downloadsChartContainer {
+  position: relative;
+  height: 780px; /* Ajusta la altura según tus necesidades */
+  width: 550; /* Ajusta el ancho al 100% del contenedor padre */
+  max-width:1500px; /* Máximo ancho para el contenedor */
+  margin: auto; /* Centra el contenedor horizontalmente */
+  background-color: #ffffff; /* Fondo blanco para un aspecto limpio */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+  padding: 20px; /* Espaciado interno */
+  box-sizing: border-box; /* Incluye el padding en el tamaño total del contenedor */
+  overflow: hidden; /* Asegura que no haya desbordamiento */
+}
+
+/* Estilo para el canvas del gráfico */
 #downloadsChart {
-    position: relative;
-    height: 400px; /* Ajusta la altura según tus necesidades */
-    width: 100%; /* Ajusta el ancho según tus necesidades */
-    background-color: #ffffff; /* Fondo blanco para un aspecto limpio */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
-    padding: 20px; /* Espaciado interno */
-  }
-  /* Asegúrate de que la fuente esté disponible */
+  height: 100% !important; /* Asegúrate de que el canvas ocupe toda la altura del contenedor */
+  width: 100% !important; /* Asegúrate de que el canvas ocupe todo el ancho del contenedor */
+}
+
+/* Asegúrate de que la fuente esté disponible */
 body {
-    font-family: 'Roboto', sans-serif; /* Ajusta a la fuente que necesitas */
-  }
-  
-  /* Estilo para el gráfico de líneas */
-  .chartjs-render-monitor {
-    border-radius: 8px; /* Bordes redondeados para el gráfico */
-  }
-  
-  /* Estilo de las etiquetas del eje X */
-  .chartjs-x-axis-labels {
-    color: #495057; /* Color de texto gris oscuro para el eje X */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente profesional y moderna */
-    font-size: 12px; /* Tamaño de fuente más pequeño y legible */
-  }
-  
-  /* Estilo de las etiquetas del eje Y */
-  .chartjs-y-axis-labels {
-    color: #495057; /* Color de texto gris oscuro para el eje Y */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente profesional y moderna */
-    font-size: 12px; /* Tamaño de fuente más pequeño y legible */
-  }
-  
-  /* Estilo de la leyenda */
-  .chartjs-legend {
-    margin-top: 10px; /* Espacio superior para separar de la gráfica */
-  }
-  
-  /* Estilo para los tooltips */
-  .chartjs-tooltip {
-    background-color: #343a40; /* Fondo oscuro para el tooltip */
-    color: #ffffff; /* Texto blanco en el tooltip */
-    border-radius: 4px; /* Bordes redondeados en el tooltip */
-    padding: 8px 12px; /* Espaciado interno del tooltip */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
-  }
-  
-  /* Estilo de los puntos del gráfico */
-  .chartjs-line-points {
-    border-radius: 50%; /* Hacer los puntos circulares */
-    border: 2px solid #ffffff; /* Borde blanco alrededor de los puntos */
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para los puntos */
-  }
-  
+  font-family: 'Roboto', sans-serif; /* Ajusta a la fuente que necesitas */
+}
+
+/* Estilo para el gráfico de líneas */
+.chartjs-render-monitor {
+  border-radius: 8px; /* Bordes redondeados para el gráfico */
+}
+
+/* Estilo de las etiquetas del eje X */
+.chartjs-x-axis-labels {
+  color: #495057; /* Color de texto gris oscuro para el eje X */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente profesional y moderna */
+  font-size: 12px; /* Tamaño de fuente más pequeño y legible */
+}
+
+/* Estilo de las etiquetas del eje Y */
+.chartjs-y-axis-labels {
+  color: #495057; /* Color de texto gris oscuro para el eje Y */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente profesional y moderna */
+  font-size: 12px; /* Tamaño de fuente más pequeño y legible */
+}
+
+/* Estilo de la leyenda */
+.chartjs-legend {
+  margin-top: 10px; /* Espacio superior para separar de la gráfica */
+}
+
+/* Estilo para los tooltips */
+.chartjs-tooltip {
+  background-color: #343a40; /* Fondo oscuro para el tooltip */
+  color: #ffffff; /* Texto blanco en el tooltip */
+  border-radius: 4px; /* Bordes redondeados en el tooltip */
+  padding: 8px 12px; /* Espaciado interno del tooltip */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+/* Estilo de los puntos del gráfico */
+.chartjs-line-points {
+  border-radius: 50%; /* Hacer los puntos circulares */
+  border: 2px solid #ffffff; /* Borde blanco alrededor de los puntos */
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2); /* Sombra sutil para los puntos */
+}

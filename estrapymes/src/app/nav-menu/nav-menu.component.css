@@ -1,6 +1,3 @@
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
-
 .main-menu {
     background: #3B82F6;
     border-right: 1px solid #e5e5e5;
@@ -28,16 +25,16 @@
 }
 
 .main-menu > ul {
-    margin: 1px 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly; /* Distribuye uniformemente los elementos */
     height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Elimina los puntos de lista */
 }
 
 .main-menu li {
-    position: relative;
-    display: block;
     width: 100%;
 }
 
@@ -69,7 +66,6 @@
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
     height: 0; /* Oculta el contenido cuando no está visible */
     line-height: 0; /* Ajuste para asegurar que el contenido no se desborde */
-    margin-left: 10px;
 }
 
 .main-menu:hover .nav-text {
@@ -77,5 +73,4 @@
     transform: translateX(0); /* Desplazado a la posición original */
     height: auto; /* Permite que el contenido tome el espacio necesario */
     line-height: normal; /* Restablece el line-height */
-    margin-left: 10px; /* Espacio adicional si es necesario */
 }
