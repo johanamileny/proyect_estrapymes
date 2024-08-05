@@ -1,87 +1,69 @@
-import { Component, OnInit } from '@angular/core';
-import { Chart, registerables } from 'chart.js';
+import { Component } from '@angular/core';
+import { ChartType, ChartOptions, ChartData } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
-  selector: 'app-garficcirculo',
+  selector: 'app-graficacirculodorado',
   standalone: true,
-  imports: [],
   templateUrl: './graficacirculodorado.component.html',
-  styleUrls: ['./graficacirculodorado.component.css']
+  styleUrls: ['./graficacirculodorado.component.css'],
+  imports: [BaseChartDirective, FormsModule, CommonModule] // Importa los módulos necesarios
 })
-export class GarficcirculoComponent implements OnInit {
-  public chart: Chart<'doughnut'>;
+// Define el tipo CustomChartType fuera de la clase
+type CustomChartType = 'doughnut' | 'bar' | 'line'; // Añade los tipos que necesites
+export class GarficcirculoComponent {
 
-  ngOnInit(): void {
-    this.createChart();
-  }
+  circulo = {
+    proposito: '',
+    propuesta: '',
+    productos: ''
+  };
+  submitted = false;
 
-  private createChart() {
-    // Registrar todos los componentes necesarios de Chart.js
-    Chart.register(...registerables);
+  chartLabels: string[] = ['¿Por qué?', '¿Cómo?', '¿Qué?'];
 
-    // Datos para el gráfico de tipo doughnut
-    const data = {
-      labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
-      datasets: [{
-        label: 'Descargas por Mes',
-        data: [30, 50, 40, 60, 70, 90], // Datos de ejemplo
-        backgroundColor: [
-          '#ff6384', // Color de la sección 1
-          '#36a2eb', // Color de la sección 2
-          '#cc65fe', // Color de la sección 3
-          '#ffce56', // Color de la sección 4
-          '#4bc0c0', // Color de la sección 5
-          '#f4511e'  // Color de la sección 6
-        ],
-        hoverBackgroundColor: [
-          '#ff6384', // Color al pasar el ratón sobre la sección 1
-          '#36a2eb', // Color al pasar el ratón sobre la sección 2
-          '#cc65fe', // Color al pasar el ratón sobre la sección 3
-          '#ffce56', // Color al pasar el ratón sobre la sección 4
-          '#4bc0c0', // Color al pasar el ratón sobre la sección 5
-          '#f4511e'  // Color al pasar el ratón sobre la sección 6
-        ]
-      }]
-    };
-
-    this.chart = new Chart('doughnutChart', {
-      type: 'doughnut',
-      data: data,
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'top',
-            labels: {
-              color: '#495057',
-              font: {
-                family: 'Roboto',
-                size: 14
-              }
-            }
-          },
-          tooltip: {
-            backgroundColor: '#343a40',
-            titleColor: '#ffffff',
-            bodyColor: '#ffffff',
-            borderColor: '#495057',
-            borderWidth: 1,
-            cornerRadius: 4,
-            padding: {
-              top: 6,
-              bottom: 6,
-              left: 8,
-              right: 8
-            },
-            callbacks: {
-              label: (tooltipItem) => {
-                // Mostrar el valor en el tooltip
-                return `Descargas: ${tooltipItem.raw}`;
-              }
-            }
-          }
-        }
+  // Ajusta el formato de chartData para ser compatible con ChartData
+  chartData: ChartData<'doughnut'> = {
+    labels: this.chartLabels,
+    datasets: [
+      {
+        data: [1, 1, 1], // Valores iniciales para el gráfico
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // Colores para cada segmento
+        borderWidth: 0
       }
-    });
+    ]
+  };
+
+  chartType: CustomChartType = 'doughnut'; // Usa CustomChartType directamente
+  chartOptions: ChartOptions<'doughnut'> = {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: { enabled: false }
+    },
+    elements: {
+      arc: {
+        borderWidth: 0
+      }
+    }
+  };
+
+  onSubmit() {
+    this.submitted = true;
+    // Actualiza los datos del gráfico después de enviar el formulario
+    this.chartData = {
+      labels: this.chartLabels,
+      datasets: [
+        {
+          data: [1, 1, 1], // Ajusta los valores según sea necesario
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // Colores para cada segmento
+          borderWidth: 0
+        }
+      ]
+    };
   }
 }

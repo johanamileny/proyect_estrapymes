@@ -1,20 +1,20 @@
-/* Asegúrate de que la fuente esté disponible */
-body {
-    font-family: 'Roboto', sans-serif; /* Fuente global */
-  }
-  
-  .chart-container {
-    position: relative;
-    width: 80%; /* Ajusta el ancho del gráfico */
-    max-width: 400px; /* Ajusta el tamaño máximo del gráfico */
-    margin-left: 5px; /* Centra el gráfico */
-    padding: 20px;
-    margin-top: 600px;
-  }
-  
-  canvas {
-    background-color: #ffffff; /* Fondo del gráfico */
-    border-radius: 8px; /* Bordes redondeados del canvas */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil del gráfico */
-  }
-  
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.chart-container {
+  position: relative;
+  width: 80%;
+  max-width: 400px;
+  margin: 40px auto;
+}
