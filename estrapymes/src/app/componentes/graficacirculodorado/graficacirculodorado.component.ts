@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
-
+type CustomChartType = 'doughnut' | 'bar' | 'line'; 
 @Component({
   selector: 'app-graficacirculodorado',
   standalone: true,
@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
   imports: [BaseChartDirective, FormsModule, CommonModule] // Importa los módulos necesarios
 })
 // Define el tipo CustomChartType fuera de la clase
-type CustomChartType = 'doughnut' | 'bar' | 'line'; // Añade los tipos que necesites
+// Añade los tipos que necesites
 export class GarficcirculoComponent {
 
   circulo = {
