@@ -4,8 +4,8 @@ import { BaseChartDirective } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-
 type CustomChartType = 'doughnut' | 'bar' | 'line'; 
+
 @Component({
   selector: 'app-graficacirculodorado',
   standalone: true,
@@ -13,20 +13,17 @@ type CustomChartType = 'doughnut' | 'bar' | 'line';
   styleUrls: ['./graficacirculodorado.component.css'],
   imports: [BaseChartDirective, FormsModule, CommonModule] // Importa los módulos necesarios
 })
-// Define el tipo CustomChartType fuera de la clase
-// Añade los tipos que necesites
 export class GarficcirculoComponent {
-
   circulo = {
     proposito: '',
     propuesta: '',
     productos: ''
   };
+
   submitted = false;
 
   chartLabels: string[] = ['¿Por qué?', '¿Cómo?', '¿Qué?'];
 
-  // Ajusta el formato de chartData para ser compatible con ChartData
   chartData: ChartData<'doughnut'> = {
     labels: this.chartLabels,
     datasets: [
@@ -38,7 +35,8 @@ export class GarficcirculoComponent {
     ]
   };
 
-  chartType: CustomChartType = 'doughnut'; // Usa CustomChartType directamente
+  chartType: CustomChartType = 'doughnut'; 
+
   chartOptions: ChartOptions<'doughnut'> = {
     responsive: true,
     plugins: {

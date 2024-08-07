@@ -1,67 +1,23 @@
-<div class="container mx-auto p-4">
-  <h1 class="text-2xl font-bold mb-4">Círculo Dorado</h1>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #circuloForm="ngForm">
+    <label for="proposito">Propósito:</label>
+    <input type="text" id="proposito" name="proposito" [(ngModel)]="circulo.proposito" required>
 
-  <!-- Formulario para ingresar los datos -->
-  <form (ngSubmit)="onSubmit()" #circuloForm="ngForm" class="space-y-4">
-    <div class="form-group">
-      <label for="proposito" class="block mb-1">Propósito:</label>
-      <input 
-        type="text" 
-        id="proposito" 
-        class="form-control p-2 border border-gray-300 rounded w-full" 
-        required 
-        [(ngModel)]="circulo.proposito" 
-        name="proposito"
-      >
-    </div>
-    <div class="form-group">
-      <label for="propuesta" class="block mb-1">Propuesta:</label>
-      <input 
-        type="text" 
-        id="propuesta" 
-        class="form-control p-2 border border-gray-300 rounded w-full" 
-        required 
-        [(ngModel)]="circulo.propuesta" 
-        name="propuesta"
-      >
-    </div>
-    <div class="form-group">
-      <label for="productos" class="block mb-1">Productos:</label>
-      <input 
-        type="text" 
-        id="productos" 
-        class="form-control p-2 border border-gray-300 rounded w-full" 
-        required 
-        [(ngModel)]="circulo.productos" 
-        name="productos"
-      >
-    </div>
-    <button 
-      type="submit" 
-      class="btn bg-blue-500 text-white p-2 rounded"
-    >
-      Enviar
-    </button>
+    <label for="propuesta">Propuesta:</label>
+    <input type="text" id="propuesta" name="propuesta" [(ngModel)]="circulo.propuesta" required>
+
+    <label for="productos">Productos:</label>
+    <input type="text" id="productos" name="productos" [(ngModel)]="circulo.productos" required>
+
+    <button type="submit">Actualizar Gráfico</button>
   </form>
 
-  <!-- Mostrar el resumen del círculo dorado solo si se ha enviado el formulario -->
-  <div *ngIf="submitted" class="mt-4">
-    <h2 class="text-xl font-bold">Resumen del Círculo Dorado</h2>
-    <p><strong>Propósito:</strong> {{ circulo.proposito }}</p>
-    <p><strong>Propuesta:</strong> {{ circulo.propuesta }}</p>
-    <p><strong>Productos:</strong> {{ circulo.productos }}</p>
-  </div>
-
-  <!-- Mostrar el gráfico solo si el formulario ha sido enviado -->
-  <div class="chart-container mt-4" *ngIf="submitted">
+  <div *ngIf="submitted">
     <canvas 
       baseChart
       [data]="chartData"
-      [labels]="chartLabels"
-      [chartType]="chartType"
-      [options]="chartOptions"
-    >
+      [type]="chartType"
+      [options]="chartOptions">
     </canvas>
   </div>
 </div>
-
