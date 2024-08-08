@@ -11,7 +11,7 @@ type CustomChartType = 'doughnut' | 'bar' | 'line';
   standalone: true,
   templateUrl: './graficacirculodorado.component.html',
   styleUrls: ['./graficacirculodorado.component.css'],
-  imports: [BaseChartDirective, FormsModule, CommonModule] // Importa los módulos necesarios
+  imports: [BaseChartDirective, FormsModule, CommonModule]
 })
 export class GarficcirculoComponent {
   circulo = {
@@ -26,11 +26,14 @@ export class GarficcirculoComponent {
 
   chartData: ChartData<'doughnut'> = {
     labels: this.chartLabels,
-    datasets: [
+    datasets: [{ data: [350, 450, 100] },
+    { data: [50, 150, 120] },
+    { data: [250, 130, 70] },
       {
         data: [1, 1, 1], // Valores iniciales para el gráfico
-        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // Colores para cada segmento
-        borderWidth: 0
+        backgroundColor: ['#ED7D30', '#FFC000', '#4473C5'], // Colores de fondo del gráfico
+        borderColor: ['#ED7D30', '#FFC000', '#4473C5'],
+        borderWidth: 2 // Borde más notorio para los segmentos
       }
     ]
   };
@@ -40,12 +43,23 @@ export class GarficcirculoComponent {
   chartOptions: ChartOptions<'doughnut'> = {
     responsive: true,
     plugins: {
-      legend: { display: false },
-      tooltip: { enabled: false }
+      legend: {
+        display: true, // Mostrar leyenda
+        position: 'top', // Posición de la leyenda
+        labels: {
+          color: '#333', // Color del texto de la leyenda
+          font: {
+            size: 14 // Tamaño de la fuente de la leyenda
+          }
+        }
+      },
+      tooltip: {
+        enabled: true // Habilitar tooltip
+      }
     },
     elements: {
       arc: {
-        borderWidth: 0
+        borderWidth: 2 // Borde más notorio para los segmentos
       }
     }
   };
@@ -57,9 +71,10 @@ export class GarficcirculoComponent {
       labels: this.chartLabels,
       datasets: [
         {
-          data: [1, 1, 1], // Ajusta los valores según sea necesario
-          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'], // Colores para cada segmento
-          borderWidth: 0
+          data: [Math.random() * 10, Math.random() * 10, Math.random() * 10], // Valores aleatorios para ejemplo
+          backgroundColor: ['#ED7D30', '#FFC000', '#4473C5'], // Colores de fondo del gráfico
+          borderColor: ['#ED7D30', '#FFC000', '#4473C5'],
+          borderWidth: 2
         }
       ]
     };

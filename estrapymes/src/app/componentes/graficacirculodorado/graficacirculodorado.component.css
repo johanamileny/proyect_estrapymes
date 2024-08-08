@@ -1,20 +1,106 @@
 .container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 50px auto; /* Centra el contenedor horizontalmente */
   padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+.info-table {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; /* Espacio debajo del encabezado */
+}
+
+.info-table h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.info-table p {
+  margin: 10px 0;
+  color: #555;
+  text-align: justify; /* Justifica el texto */
+}
+
+.chart-info-container {
+  display: flex;
+  gap: 20px; /* Espacio entre el formulario y el gráfico */
+  align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+}
+
+.form-container {
+  flex: 1; /* Ocupa el espacio disponible */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los elementos del formulario */
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Espacio debajo de cada grupo de formulario */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%; /* Ajustado para usar el ancho completo del contenedor */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .btn {
-  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Bordes más redondeados para el botón */
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .chart-container {
+  flex: 1; /* Ocupa el espacio disponible */
+  display: flex;
+  flex-direction: column; /* Asegura que el gráfico y la tabla de información estén en columna */
+  align-items: center; /* Centra el contenido horizontalmente */
   position: relative;
-  width: 80%;
-  max-width: 400px;
-  margin: 40px auto;
+  width: 600px; /* Ancho del contenedor del gráfico */
+  height: 400px; /* Altura del contenedor del gráfico */
+}
+
+.chart-container canvas {
+  position: absolute; /* Posiciona el canvas dentro del contenedor */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(1.2) scaleY(1); /* Escala horizontalmente para darle una forma ovalada */
+  width: 30%;
+  height: auto;
 }
