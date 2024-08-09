@@ -38,13 +38,13 @@ export class GraficorelojComponent implements OnInit {
 
     const element = this.chartContainer.nativeElement;
     const margin = { top: 20, right: 30, bottom: 40, left: 30 };
-    const width = element.offsetWidth - margin.left - margin.right;
+    const width = (element.offsetWidth ) - margin.left- margin.right;
     const height = element.offsetHeight - margin.top - margin.bottom;
 
     const svg = d3
       .select(element)
       .append('svg')
-      .attr('width', width + margin.left + margin.right)
+      .attr('width', 700)
       .attr('height', height + margin.top + margin.bottom)
       .append('g')
       .attr('transform', `translate(${margin.left},${margin.top})`);
@@ -95,14 +95,14 @@ export class GraficorelojComponent implements OnInit {
 
     // Añadir las flechas y etiquetas desde el punto central hacia cada parte del plano cartesiano
     const positions = [
-      { x: 1.5, y: 0, label: 'Estrategias destinadas al fracaso' },   // Flecha hacia la derecha
-      { x: -1.5, y: 0, label: 'Bajo precio' },  // Flecha hacia la izquierda
-      { x: 0, y: 1.5, label: 'Diferenciación' },   // Flecha hacia arriba
-      { x: 0, y: -1.5, label: 'Precio' },  // Flecha hacia abajo
-      { x: 1.5, y: 1.5, label: 'Diferenciación segmentada' }, // Flecha hacia arriba derecha
-      { x: -1.5, y: 1.5, label: 'Híbrida' }, // Flecha hacia arriba izquierda
-      { x: 1.5, y: -1.5, label: 'Estrategias destinadas al fracaso' }, // Flecha hacia abajo derecha
-      { x: -1.5, y: -1.5, label: 'Bajo precio/valor añadido' } // Flecha hacia abajo izquierda
+      { x: 1.5, y: 0, label: 'Estrategias destinadas al fracaso', labelX: 1.3, labelY: -0.1},   // Flecha hacia la derecha
+      { x: -1.5, y: 0, label: 'Bajo precio', labelX: -1.23, labelY: -0.1 },  // Flecha hacia la izquierda
+      { x: 0, y: 1.5, label: 'Diferenciación', labelX: 0, labelY: 1.55 },   // Flecha hacia arriba
+      { x: 0, y: -1.5, label: 'Precio', labelX: 0.17, labelY: -1.48 },  // Flecha hacia abajo
+      { x: 1.5, y: 1.5, label: 'Diferenciación segmentada', labelX: 1.3, labelY: 1.55 }, // Flecha hacia arriba derecha
+      { x: -1.5, y: 1.5, label: 'Híbrida', labelX: -1.32, labelY: 1.55 }, // Flecha hacia arriba izquierda
+      { x: 1.5, y: -1.5, label: 'Estrategias destinadas al fracaso', labelX: 1.3, labelY: -1.48 }, // Flecha hacia abajo derecha
+      { x: -1.5, y: -1.5, label: 'Bajo precio/valor añadido', labelX: -0.9, labelY: -1.48 } // Flecha hacia abajo izquierda
     ];
 
     positions.forEach(pos => {
@@ -116,13 +116,12 @@ export class GraficorelojComponent implements OnInit {
         .attr('stroke-width', 1.5) // Ancho consistente
         .attr('marker-end', 'url(#arrow)');
 
-      // Añadir etiquetas para las flechas
+      // Añadir etiquetas para las flechas, con ajuste de posición individual
       svg
         .append('text')
-        .attr('x', x(pos.x))
-        .attr('y', y(pos.y))
-        .attr('dy', -5)
-        .attr('text-anchor', 'middle')
+        .attr('x', x(pos.labelX)) // Ajuste de posición horizontal
+        .attr('y', y(pos.labelY)) // Ajuste de posición vertical
+        .attr('text-anchor', 'middle') // Centrar horizontalmente
         .text(pos.label);
     });
 
