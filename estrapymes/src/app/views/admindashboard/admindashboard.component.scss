@@ -113,8 +113,8 @@ header {
 }
 
 .chart{
- margin-left: 400px;
- margin-top: -350px;
+ margin-left: 300px;
+ margin-top: -360px;
 }
 
 .search-container {
@@ -166,27 +166,88 @@ header {
   background-color: #2A6BBF;
 }
 
-.sing-idiomas-buttons {
-  display: flex;
-  gap: 10px; /* Espacio entre los botones */
-  margin-left: auto;
-}
-
-.idiomas,
-.login-button {
-  background-color: #3B82F6; /* Mismo color que el botón "Buscar" */
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.idiomas:hover,
-.login-button:hover {
-  background-color: #2A6BBF; /* Mismo color que el botón "Buscar" cuando se pasa el mouse por encima */
-}
 
 .user-info {
   font-size: 1em;
+}
+
+.account-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Alinea el menú de cuenta a la derecha */
+}
+
+.account-menu .nav-link {
+  display: flex;
+  align-items: center;
+  color: white; /* Asegura que el texto sea visible sobre el fondo oscuro */
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.account-menu .nav-icon {
+  margin-right: 10px;
+}
+
+.account-menu .account-menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Justo debajo del botón de cuenta */
+  right: 0;
+  background-color: #3B82F6; /* Mismo color que el botón */
+  border: 1px solid #ddd;
+  width: 200px;
+  z-index: 1001; /* Asegura que el menú desplegable esté sobre otros elementos */
+}
+
+.account-menu .account-menu-dropdown li {
+  list-style: none;
+}
+
+.account-menu .account-menu-dropdown li a {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.account-menu .account-menu-dropdown li a:hover {
+  background-color: #62A9BD;
+}
+
+/* Muestra el menú desplegable al pasar el mouse sobre el contenedor */
+.account-menu:hover .account-menu-dropdown {
+  display: block;
+}
+
+/* Ajusta el espacio de la página para el header fijo */
+body {
+  margin-top: 80px; /* Asegura que el contenido no quede oculto debajo del header */
+}
+
+.password-change-container {
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-top: 20px;
+  position: absolute;
+  top: 135px;
+  left: 460px;
+  width: 50%;
+  height: 50%;
+  background: white;
+  z-index: 900; // Asegúrate de que esté en una capa superior
+  display: block;
+}
+
+.password-change-container button {
+  position: absolute;
+  top: 80px;
+  right: 220px;
+}
+.scroll-target {
+  padding-top: 50px; /* Ajusta según sea necesario */
+  margin-top: -50px; /* Ajusta según sea necesario */
 }

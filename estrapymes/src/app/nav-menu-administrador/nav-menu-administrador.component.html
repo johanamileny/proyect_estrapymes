@@ -9,24 +9,18 @@
     <nav class="main-menu-administrator">
       <ul>
       <li>
-        <a href="#welcome" class="nav-link font-bold">
-          <i class="fa fa-home fa-2x nav-icon"></i>
-          <span class="nav-text">Bienvenido a Estramipyme</span>
-        </a>
-      </li>
-      <li>
-        <a href="#admintrador" class="nav-link font-bold">
+        <a href="#" (click)="scrollToSection($event, 'app-graficaradar')" class="nav-link font-bold">
           <i class="fa fa-home fa-2x nav-icon"></i>
           <span class="nav-text">Panel Principal</span>
         </a>
       </li>
         
-          <li>
-            <a href="#user" class="nav-link font-bold">
-              <i class="fa fa-user fa-2x nav-icon"></i>
-              <span class="nav-text">Matriz Usuarios</span>
-            </a>
-          </li>
+      <li>
+        <a href="#" (click)="scrollToSection($event, 'user-management')" class="nav-link font-bold">
+          <i class="fa fa-user fa-2x nav-icon"></i>
+          <span class="nav-text">Matriz Usuarios</span>
+        </a>
+      </li>
           <li>
             <a href="#strategic" class="nav-link font-bold">
               <i class="fa fa-lightbulb fa-2x nav-icon "></i>
@@ -40,19 +34,19 @@
             </a>
           </li>
           <li>
-            <a class="#create"(click)="navigateToLogin()">
+            <a class="#create font-bold"(click)="navigateToLogin()">
               <i class="fa fa-user fa-2x nav-icon "></i>
               <span class="nav-text">Matriz Co-Creacion</span>
             </a>
           </li>
           <li>
-            <a class="#book" (click)="navigateToLogin()">
+            <a class="#book font-bold" (click)="navigateToLogin()">
               <i class="fa-solid fa-book fa-2x nav-icon"></i>
               <span class="nav-text">Matriz Libro</span>
             </a>
           </li>
           <li>
-            <a class="#comunity" (click)="navigateToLogin()">
+            <a class="#comunity font-bold" (click)="navigateToLogin()">
               <i class="fa fa-headset fa-2x nav-icon"></i>
               <span class="nav-text">Matriz Foro de Comunidad</span>
             </a>
