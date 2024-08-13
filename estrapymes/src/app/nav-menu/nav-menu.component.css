@@ -9,27 +9,36 @@
     overflow: hidden;
     transition: width 0.3s;
     z-index: 1001; /* Asegura que el main-menu esté por encima del header */
-  }
-  
-  .main-menu:hover {
+}
+
+.main-menu:hover {
     width: 250px;
-  }
-  
-  .main-menu > ul {
-    margin: 1px 0;
+}
+
+.main-menu:hover ~ #header {
+    left: 250px;
+    width: calc(100% - 250px);
+}
+
+.main-menu:hover ~ .landing-page {
+    margin-left: 250px;
+}
+
+.main-menu > ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly; /* Distribuye uniformemente los elementos */
     height: 100%;
-  }
-  
-  .main-menu li {
-    position: relative;
-    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Elimina los puntos de lista */
+}
+
+.main-menu li {
     width: 100%;
-  }
-  
-  .main-menu li a {
+}
+
+.main-menu li a {
     display: flex;
     align-items: center;
     padding: 10px 14px;
@@ -38,18 +47,18 @@
     font-size: 13.5px;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .main-menu li a:hover {
+}
+
+.main-menu li a:hover {
     background-color: #62A9BD;
     color: #fff;
-  }
-  
-  .main-menu .nav-icon {
+}
+
+.main-menu .nav-icon {
     margin-right: 10px;
-  }
-  
-  .main-menu .nav-text {
+}
+
+.main-menu .nav-text {
     opacity: 0; /* Inicialmente invisible */
     transform: translateX(-20px); /* Inicialmente desplazado a la izquierda */
     overflow: hidden; /* Asegura que el contenido no se desborde */
@@ -57,20 +66,11 @@
     transition: opacity 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
     height: 0; /* Oculta el contenido cuando no está visible */
     line-height: 0; /* Ajuste para asegurar que el contenido no se desborde */
-    margin-left: 10px;
-  }
-  
-  .main-menu:hover .nav-text {
+}
+
+.main-menu:hover .nav-text {
     opacity: 1; /* Visible al hacer hover */
     transform: translateX(0); /* Desplazado a la posición original */
     height: auto; /* Permite que el contenido tome el espacio necesario */
     line-height: normal; /* Restablece el line-height */
-    margin-left: 10px; /* Espacio adicional si es necesario */
-  }
-  
-  
-
-  
- 
-  @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+}

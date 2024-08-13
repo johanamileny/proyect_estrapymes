@@ -1,40 +1,107 @@
-/* Estilo general para el contenedor del gráfico */
-.chart-container {
-  width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
-  height: auto; /* Ajusta la altura automáticamente */
-  max-width: 800px; /* Tamaño máximo aumentado para evitar que el contenedor sea demasiado pequeño */
-  margin: 0 auto; /* Centra el contenedor horizontalmente */
+.container {
+  max-width: 1000px; /* Ancho máximo del contenedor */
+  margin: 390px auto; /* Centra el contenedor horizontalmente */
+  padding: 20px;
+  margin-left: 0px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+.info-table {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px; /* Espacio debajo del encabezado */
+}
+
+.info-table h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.info-table p {
+  margin: 10px 0;
+  color: #555;
+  text-align: justify; /* Justifica el texto */
+}
+
+.chart-info-container {
   display: flex;
-  justify-content: center; /* Centra el SVG horizontalmente dentro del contenedor */
-  align-items: center; /* Centra el SVG verticalmente dentro del contenedor */
-  position: relative; /* Asegura que el contenedor pueda ser posicionado si es necesario */
+  gap: 20px; /* Espacio entre el formulario y el gráfico */
+  align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
 }
 
-/* Estilo para el lienzo del gráfico */
-svg {
-  width: 100%; /* Ajusta el SVG al ancho del contenedor */
-  height: auto; /* Mantiene la proporción del SVG */
+.form-container {
+  flex: 1; /* Ocupa el espacio disponible */
 }
 
-/* Media queries para ajustar el tamaño del gráfico en diferentes dispositivos */
-
-/* Para pantallas de menos de 600px (móviles) */
-@media (max-width: 600px) {
-  .chart-container {
-    height: 300px; /* Altura moderada para móviles */
-  }
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacio entre los elementos del formulario */
 }
 
-/* Para pantallas entre 601px y 900px (tablets) */
-@media (min-width: 601px) and (max-width: 900px) {
-  .chart-container {
-    height: 400px; /* Altura moderada para tablets */
-  }
+.form-group {
+  margin-bottom: 15px; /* Espacio debajo de cada grupo de formulario */
 }
 
-/* Para pantallas mayores de 901px (escritorios) */
-@media (min-width: 901px) {
-  .chart-container {
-    height: 500px; /* Altura moderada para escritorios */
-  }
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%; /* Ajustado para usar el ancho completo del contenedor */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.btn {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Bordes más redondeados para el botón */
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.chart-container {
+  flex: 1; /* Ocupa el espacio disponible */
+  display: flex;
+  flex-direction: column; /* Asegura que el gráfico y la tabla de información estén en columna */
+  align-items: center; /* Centra el contenido horizontalmente */
+  position: relative;
+  width: 600px; /* Ancho del contenedor del gráfico */
+  height: 400px; /* Altura del contenedor del gráfico */
+}
+
+.chart-container canvas {
+  position: absolute; /* Posiciona el canvas dentro del contenedor */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(1.2) scaleY(1); /* Escala horizontalmente para darle una forma ovalada */
+  width: 30%;
+  height: auto;
 }

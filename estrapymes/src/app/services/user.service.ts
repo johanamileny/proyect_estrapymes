@@ -7,6 +7,15 @@ import { User } from '../componentes/user-detail/user-detail.component';
   providedIn: 'root'
 })
 export class UsersService {
+  private userName: string = '';
+
+  setUserName(name: string) {
+    this.userName = name;
+  }
+
+  getUserName(): string {
+    return this.userName;
+  }
 
   private apiUrl = 'http://localhost:3000/users'; // URL de la API de json-server
 

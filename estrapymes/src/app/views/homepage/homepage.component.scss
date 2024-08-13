@@ -1,3 +1,6 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
 /* Start Global Rules */
 * {
   box-sizing: border-box;
@@ -215,7 +218,7 @@ footer .logo {
 }
 
 .main-text2 h1 {
-  margin-top: -50px;
+  margin-top: 70px;
   color: #0082ca;
   font-size: 3rem;
   font-weight: bold;
@@ -223,9 +226,9 @@ footer .logo {
 
 .main-text2 p {
   color: #000;
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   margin-top: 10px;
-  text-align: justify;
+  text-align: center;
 }
 h2 {
   font-weight: bold;
@@ -238,14 +241,17 @@ h2 {
   max-width: 100%;
   height: auto;
 }
+.image-c img {
+  margin-top: 170px;
+  max-width: 100%;
+  height: 580px;
 
-@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+}
 
 /* End Landing Page */
 
 /* Scroll Animation */
-/* Scroll Animation */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -257,11 +263,77 @@ h2 {
   }
 }
 
+/* Estilo inicial para los elementos que se activarán con el scroll */
 .scroll-trigger {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  transform: translateY(20px); /* Inicialmente desplazado */
 }
 
+/* Aplicar animación cuando el elemento está visible */
 .scroll-trigger.visible {
   opacity: 1;
+  transform: translateY(0); /* Restablecer la posición */
+  animation: fadeIn 1s forwards;
 }
+
+/* Clase para animar cuando se hace clic */
+.scroll-trigger.animate {
+  animation: fadeIn 1s forwards;
+}
+
+
+.page-footer-section {
+  background-color: #f5f5f5;
+  padding: 20px;
+  text-align: left;
+  font-size: 1.2rem;
+  margin-top: 150px;
+}
+
+.page-footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.page-footer-item {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.page-footer-item h3 {
+  font-size: 1.7rem; /* Aumentar el tamaño de la fuente */
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #000; /* Hacer el color un poco más oscuro para mayor contraste */
+}
+
+.page-footer-item p {
+  margin: 10px 0; /* Aumenta el margen superior e inferior si es necesario */
+  padding: 0; /* Ajusta el relleno si hay espacio adicional */
+  text-align: center; /* Centra el texto si es necesario */
+  line-height: 1.5; /* Ajusta la altura de línea para mejorar la legibilidad */
+}
+
+
+.page-footer-item a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.page-footer-item a:hover {
+  text-decoration: underline;
+}
+
+.page-footer-item img {
+  max-width: 100px;
+  margin: 20px 0;
+}
+
+.page-footer-item i {
+  margin: 0 10px;
+  font-size: 1.5em;
+}
+

@@ -1,0 +1,43 @@
+<div class="user-management">
+  <h2>Gestión de Usuarios</h2>
+  
+  <form [formGroup]="userForm" (ngSubmit)="addUser()">
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input id="name" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="account">Cuenta:</label>
+      <input id="account" formControlName="account">
+    </div>
+
+    <div class="form-group">
+      <button type="submit">{{ editingUser ? 'Actualizar' : 'Agregar' }} Usuario</button>
+    </div>
+  </form>
+
+  <table class="user-list">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Cuenta</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.account }}</td>
+        <td>{{ user.active ? 'Activo' : 'Inactivo' }}</td>
+        <td>
+          <button (click)="editUser(user)">Editar</button>
+          <button (click)="deleteUser(user)">Eliminar</button>
+          <button (click)="toggleUserStatus(user)">{{ user.active ? 'Inactivar' : 'Activar' }}</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

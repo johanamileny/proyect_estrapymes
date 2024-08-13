@@ -1,0 +1,64 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+
+.main-menu-administrator {
+    background: #3B82F6;
+    border-right: 1px solid #e5e5e5;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 250px; /* Mantiene el menú abierto */
+    overflow: hidden;
+    z-index: 1001; /* Asegura que el main-menu esté por encima del header */
+    transition: none; /* Elimina la transición de ancho */
+}
+
+.main-menu-administrator:hover {
+    width: 250px; /* Esta regla es opcional ahora */
+}
+
+.main-menu-administrator > ul {
+    margin: 1px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.main-menu-administrator li {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.main-menu-administrator li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    color: #fff;
+    font-family: 'Arial';
+    font-size: 13.5px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-menu-administrator li a:hover {
+    background-color: #62A9BD;
+    color: #fff;
+}
+
+.main-menu-administrator .nav-icon {
+    margin-right: 10px;
+}
+
+.main-menu-administrator .nav-text {
+    opacity: 1; /* Siempre visible */
+    transform: translateX(0); /* Posición original */
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+    height: auto; /* Permite que el contenido tome el espacio necesario */
+    line-height: normal; /* Restablece el line-height */
+    margin-left: 10px; /* Espacio adicional si es necesario */
+    transition: none; /* Elimina la transición de la opacidad y la transformación */
+}
+

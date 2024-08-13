@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService } from '../../services/auth.service';
 import { passwordConfirmValidator } from '../../shared/password-confirm.directive';
 import { Router } from '@angular/router';
+import { User } from '../../componentes/user-detail/user-detail.component';
 
 @Component({
   selector: 'app-register',
@@ -17,6 +18,7 @@ export class RegisterComponent implements OnInit {
     account: new FormControl('natural', Validators.required),
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
+    typeuser: new FormControl('',[Validators.required]), 
     company: new FormControl(''), 
     sector: new FormControl(''),
     password: new FormControl('', Validators.required),
@@ -24,11 +26,15 @@ export class RegisterComponent implements OnInit {
   }, { validators: passwordConfirmValidator });
 
   isJuridica = false;
+  isNatural = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   get name() {
     return this.registerForm.get('name');
+  }
+  get typeuser() {
+    return this.registerForm.get('typeuser');
   }
 
   get email() {
@@ -55,6 +61,7 @@ export class RegisterComponent implements OnInit {
 
   onAccountTypeChange(type: string) {
     this.isJuridica = type === 'juridica';
+    this.isNatural = type === 'natural'
 
     if (this.isJuridica) {
       this.registerForm.get('company')?.setValidators(Validators.required);
@@ -66,7 +73,14 @@ export class RegisterComponent implements OnInit {
 
     this.registerForm.get('company')?.updateValueAndValidity();
     this.registerForm.get('sector')?.updateValueAndValidity();
-  }
+  
+  if (this.isNatural) {
+    this.registerForm.get('typeuser')?.setValidators(Validators.required);
+  } else {
+      this.registerForm.get('typeuser')?.clearValidators();
+    }
+      this.registerForm.get('typeuser')?.updateValueAndValidity();
+    }
 
   register() {
     if (this.registerForm.valid) {

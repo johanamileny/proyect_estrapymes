@@ -1,12 +1,14 @@
-/* Estilos para el contenedor principal que agrupa los componentes */
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Espacio entre los componentes */
-  padding: 20px; /* Espacio interno del contenedor */
-}
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
 
-/* Estilos generales para los componentes dentro del contenedor */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre loscomponentes */
+    padding: 20px; /* Espacio interno del contenedor 
+  }
+  
+ /* Estilos generales para los componentes dentro del contenedor */
 .container > * {
   flex: 1 1 300px; /* Tamaño base y ajuste según el tamaño deseado */
   max-width: 100%; /* Asegura que los componentes no se desborden */
@@ -79,4 +81,173 @@ app-user-detail {
   height: 50px;
   object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
   margin-right: 10px;
+}
+}
+ /* Añadir estilos para centrar y dar formato */
+ body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF; 
+}
+
+header {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.logo {
+  font-size: 1.2em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.chart{
+ margin-left: 300px;
+ margin-top: -360px;
+}
+
+.search-container {
+  margin-top: 150px; /* Asegura que el cuadro de búsqueda esté justo debajo */
+  justify-content: center;
+  color: black;
+  align-items: center;
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+}
+
+.search-group {
+  display: flex;
+  align-items: center;
+  margin-left: 690px;
+}
+
+.search-box {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 10px 10px 8.2px 40px; /* Espacio para el icono a la izquierda */
+  
+}
+
+.search-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #3B82F6;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin-top: 4px;
+ 
+}
+
+.search-button:hover {
+  background-color: #2A6BBF;
+}
+
+
+.user-info {
+  font-size: 1em;
+}
+
+.account-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Alinea el menú de cuenta a la derecha */
+}
+
+.account-menu .nav-link {
+  display: flex;
+  align-items: center;
+  color: white; /* Asegura que el texto sea visible sobre el fondo oscuro */
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.account-menu .nav-icon {
+  margin-right: 10px;
+}
+
+.account-menu .account-menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%; /* Justo debajo del botón de cuenta */
+  right: 0;
+  background-color: #3B82F6; /* Mismo color que el botón */
+  border: 1px solid #ddd;
+  width: 200px;
+  z-index: 1001; /* Asegura que el menú desplegable esté sobre otros elementos */
+}
+
+.account-menu .account-menu-dropdown li {
+  list-style: none;
+}
+
+.account-menu .account-menu-dropdown li a {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.account-menu .account-menu-dropdown li a:hover {
+  background-color: #62A9BD;
+}
+
+/* Muestra el menú desplegable al pasar el mouse sobre el contenedor */
+.account-menu:hover .account-menu-dropdown {
+  display: block;
+}
+
+/* Ajusta el espacio de la página para el header fijo */
+body {
+  margin-top: 80px; /* Asegura que el contenido no quede oculto debajo del header */
+}
+
+.password-change-container {
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-top: 20px;
+  position: absolute;
+  top: 135px;
+  left: 460px;
+  width: 50%;
+  height: 50%;
+  background: white;
+  z-index: 900; // Asegúrate de que esté en una capa superior
+  display: block;
+}
+
+.password-change-container button {
+  position: absolute;
+  top: 80px;
+  right: 220px;
+}
+.scroll-target {
+  padding-top: 50px; /* Ajusta según sea necesario */
+  margin-top: -50px; /* Ajusta según sea necesario */
 }

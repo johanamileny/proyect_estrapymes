@@ -7,6 +7,9 @@ import { LoginComponent } from './views/login/login.component';
 import { AuthGuard} from './shared/auth.guard';
 import { AdmindashboardComponent } from './views/admindashboard/admindashboard.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { NavMenuAdministradorComponent } from './nav-menu-administrador/nav-menu-administrador.component';
+import { ChangePasswordComponent } from './views/change-password/change-password.component'; 
+import { UserManagementComponent } from './componentes/user-management/user-management.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,7 +17,11 @@ export const routes: Routes = [
   { path: 'homepage', component: HomepageComponent},
   { path: 'admindashboard', component:AdmindashboardComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
-  {path: 'nav-menu', component:NavMenuComponent}
+  {path: 'nav-menu', component:NavMenuComponent},
+  {path: 'nav-menu-administrador', component:NavMenuAdministradorComponent},
+  { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'user-management', component: UserManagementComponent },
+  
 ];
 
 @NgModule({

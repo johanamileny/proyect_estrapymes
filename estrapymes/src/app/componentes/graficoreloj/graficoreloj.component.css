@@ -1,0 +1,39 @@
+/* Estilo para el contenedor del gráfico */
+.chart-container {
+  position: relative;
+  height: 600px; /* Ajusta la altura según sea necesario */
+  width: 600px;
+  margin-right: 5px;
+  margin-top: -567px; /* Ajusta el margen superior para mantener el contenedor dentro de la vista */
+}
+
+/* Estilo para el marcador de flecha */
+.marker path {
+  fill: #333333; /* Gris oscuro para un aspecto más profesional */
+}
+
+/* Estilo para los ejes */
+.axis line, .axis path {
+  stroke: #333333; /* Gris oscuro para los ejes */
+  stroke-width: 1; /* Grosor de los ejes */
+}
+
+.axis text {
+  font-size: 12px; /* Tamaño de la fuente para las etiquetas de los ejes */
+  fill: #333333; /* Gris oscuro para las etiquetas de los ejes */
+}
+
+/* Estilo para las etiquetas de las flechas */
+.arrow-label {
+  font-size: 12px; /* Tamaño de la fuente para las etiquetas de las flechas */
+  fill: #333333; /* Gris oscuro para las etiquetas de las flechas */
+}
+
+/* Estilo para la elipse */
+.ellipse {
+  fill: #E0F7FA; /* Azul claro de relleno */
+  stroke: #F7D700; /* Amarillo EAFIT para el borde */
+  stroke-width: 1; /* Ancho del borde */
+  stroke-dasharray: 8, 4; /* Línea punteada para un efecto más elegante */
+  opacity: 0.8; /* Opacidad del borde para un efecto más suave */
+}

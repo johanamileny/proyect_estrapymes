@@ -1,0 +1,75 @@
+.user-management {
+  padding: 20px;
+  max-width: 1000px; /* Ajusta el ancho del contenedor según sea necesario */
+  margin-top: -300px;
+  margin-left: 300px;
+  background-color: #f9f9f9; /* Color de fondo para verificar la visibilidad */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+ 
+  
+
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.form-group label {
+  width: 150px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.form-group input {
+  flex: 1;
+  padding: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.user-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-list th, .user-list td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.user-list th {
+  background-color: #f4f4f4;
+}
+
+.user-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+

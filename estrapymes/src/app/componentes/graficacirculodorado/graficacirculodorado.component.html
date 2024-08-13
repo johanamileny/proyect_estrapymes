@@ -1,3 +1,40 @@
+<div class="container">
+  <div class="info-table">
+    <h2>Instrucciones para el Diligenciamiento:</h2>
+    <p>
+      Diligencia los recuadros  (Propósito, Propuesta de valor y Productos y servicios) con la información relacionada al micronegocio que está siendo sujeto de análisis y dando respuesta a las preguntas del círculo según corresponda.
+    </p>
+  </div>
+  
+  <div class="chart-info-container">
+    <div class="form-container">
+      <form (ngSubmit)="onSubmit()" #circuloForm="ngForm" class="form">
+        <div class="form-group">
+          <label for="proposito">Propósito:</label>
+          <input type="text" id="proposito" name="proposito" [(ngModel)]="circulo.proposito" required>
+        </div>
 
-<!-- graficacirculodorado.component.html -->
-<div class="chart-container" #chart></div>
+        <div class="form-group">
+          <label for="propuesta">Propuesta:</label>
+          <input type="text" id="propuesta" name="propuesta" [(ngModel)]="circulo.propuesta" required>
+        </div>
+
+        <div class="form-group">
+          <label for="productos">Productos:</label>
+          <input type="text" id="productos" name="productos" [(ngModel)]="circulo.productos" required>
+        </div>
+
+        <button type="submit" class="btn">Actualizar Gráfico</button>
+      </form>
+    </div>
+
+    <div *ngIf="submitted" class="chart-container">
+      <canvas 
+        baseChart
+        [data]="chartData"
+        [type]="chartType"
+        [options]="chartOptions">
+      </canvas>
+    </div>
+  </div>
+</div>

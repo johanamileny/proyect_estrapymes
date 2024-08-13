@@ -35,22 +35,22 @@ export class GraficaradarComponent implements OnInit {
         label: 'Empresa Uno',
         data: this.dataEmpresaUno,
         fill: true,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgb(255, 99, 132)',
-        pointBackgroundColor: 'rgb(255, 99, 132)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(255, 99, 132)'
+      backgroundColor: "rgba(54, 162, 235, 0.2)", /* Azul suave */
+      borderColor: "rgba(54, 162, 235, 1)", /* Azul profesional */
+      pointBackgroundColor: "rgba(54, 162, 235, 1)", /* Azul profesional */
+      pointBorderColor: "#fff",
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgba(54, 162, 235, 1)" /* Azul profesional */
       }, {
         label: 'Empresa Dos',
         data: this.dataEmpresaDos,
         fill: true,
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgb(54, 162, 235)',
-        pointBackgroundColor: 'rgb(54, 162, 235)',
-        pointBorderColor: '#fff',
-        pointHoverBackgroundColor: '#fff',
-        pointHoverBorderColor: 'rgb(54, 162, 235)'
+        backgroundColor: "rgba(75, 192, 192, 0.2)", /* Verde suave */
+        borderColor: "rgba(75, 192, 192, 1)", /* Verde profesional */
+        pointBackgroundColor: "rgba(75, 192, 192, 1)", /* Verde profesional */
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgba(75, 192, 192, 1)" /* Verde profesional */
       }]
     };
 

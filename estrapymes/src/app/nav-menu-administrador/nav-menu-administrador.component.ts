@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-nav-menu',
+  selector: 'app-nav-menu-administrador',
   standalone: true,
   imports: [],
-  templateUrl: './nav-menu.component.html',
-  styleUrl: './nav-menu.component.css'
+  templateUrl: './nav-menu-administrador.component.html',
+  styleUrl: './nav-menu-administrador.component.css'
 })
-export class NavMenuComponent implements OnInit {
+export class NavMenuAdministradorComponent implements OnInit {
   constructor(private router: Router) {}
   
   ngOnInit(): void {
@@ -87,3 +87,4 @@ export class NavMenuComponent implements OnInit {
     }
   }
 }
+ 
