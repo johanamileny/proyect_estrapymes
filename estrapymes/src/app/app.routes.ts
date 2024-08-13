@@ -8,6 +8,7 @@ import { AuthGuard} from './shared/auth.guard';
 import { AdmindashboardComponent } from './views/admindashboard/admindashboard.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { NavMenuAdministradorComponent } from './nav-menu-administrador/nav-menu-administrador.component';
+import { UserComponent } from './views/user/user.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,7 +17,8 @@ export const routes: Routes = [
   { path: 'admindashboard', component:AdmindashboardComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   {path: 'nav-menu', component:NavMenuComponent},
-  {path: 'nav-menu-administrador', component:NavMenuAdministradorComponent}
+  {path: 'nav-menu-administrador', component:NavMenuAdministradorComponent},
+  {path: 'user', component:UserComponent}
 ];
 
 @NgModule({
