@@ -22,7 +22,7 @@
       <div *ngIf="isNatural" class="relative mb-0">
         <i class="fa-solid fa-users absolute left-4 top-4 text-gray-500"></i>
         <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select" 
-                name="typeuser" id="typeuser" formControlName="typeuser" required>
+                name="typeuser" id="typeuser" formControlName="typeuser" aria-label="Tipo de Usuario" required>
           <option value="" disabled selected hidden>Tipo de Usuario</option>
           <option value="user">Usuario</option>
           <option value="student">Estudiante Posgrado</option>
@@ -91,7 +91,7 @@
         <i class="fa-solid fa-building absolute left-4 top-4 text-gray-500"></i>
         
         <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select" 
-                name="company" id="company" formControlName="company" required >
+                name="company" id="company" formControlName="company" aria-label="Tipo de Empresa" required>
           <option value="" disabled selected hidden>Tipo de Empresa</option>
           <option value="small">Pequeña</option>
           <option value="median">Mediana</option>
@@ -101,7 +101,7 @@
        <div class="relative mb-0">
         <i class="fa-solid fa-landmark absolute left-4 top-4 text-gray-500"></i>
         <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg  focus:border-blue-500 custom-select" 
-        name="company" id="company" formControlName="company" required>"
+        name="company" id="company_sector" formControlName="company" required title="Seleccione el tipo de empresa">
                 name="sector" id="sector" formControlName="sector" required>
           <option value="" disabled selected hidden>Tipo de Sector</option>
           <option value="1">Agroindustria</option>
