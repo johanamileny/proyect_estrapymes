@@ -19,7 +19,22 @@
         </div>
         </div>
       </div>
-
+      <div *ngIf="isNatural" class="relative mb-0">
+        <i class="fa-solid fa-users absolute left-4 top-4 text-gray-500"></i>
+        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select" 
+                name="typeuser" id="typeuser" formControlName="typeuser" required>
+          <option value="" disabled selected hidden>Tipo de Usuario</option>
+          <option value="user">Usuario</option>
+          <option value="student">Estudiante Posgrado</option>
+          <option value="teacher">Docente EAFIT</option>
+        </select> 
+      </div>
+      <div *ngIf="typeuser.invalid && (typeuser.dirty || typeuser.touched)" class="mb-4">
+        <div *ngIf="typeuser.hasError('required')" class="text-red-600">
+          El tipo de usuario es obligatorio
+        </div>
+      </div>
+    
       <div class="relative mb-0">
         <i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-500"></i>
       <input class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="email" name="email" id="email" placeholder="Correo"

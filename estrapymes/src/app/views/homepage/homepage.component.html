@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal Estramipymes</title>
-</head>
-<body>
 
   <app-nav-menu></app-nav-menu>
 
   <div class="landing-page">
     <header>
       <div class="container mx-auto flex justify-between items-center from-black to-white">
-        <a href="#" class="logo text-white font-bold">
+        <a href="#" class="logo text-white font-bold font-roboto">
           <b>Portal EstraMiPyme</b> <br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
         </a>
         <ul class="flex space-x-4">
           <li class="login-register-buttons">
-            <button (click)="navigateToLogin()" class="login-button font-bold">Inicio de Sesión</button>
-            <button (click)="navigateToRegister()" class="register-button font-bold">Regístrate</button>
+            <button (click)="navigateToLogin()" class="login-button font-bold font-roboto">Inicio de Sesión</button>
+            <button (click)="navigateToRegister()" class="register-button font-bold font-roboto">Regístrate</button>
           </li>
         </ul>
       </div>
@@ -26,7 +18,7 @@
 
     <div class class="content">
       <div class="container2 scroll-trigger">
-        <div class="main-text">
+        <div class="main-text font-roboto">
           <h1>¡Despierta el Potencial de Tu PYME!</h1>
           <p>En Estramipyme, estamos aquí para llevar tu negocio al 
             siguiente nivel con estrategias innovadoras y herramientas poderosas. 
@@ -38,7 +30,7 @@
         </div>
       </div>
       <div id="bibliography" class="container2 scroll-trigger">
-        <div class="main-text2">
+        <div class="main-text2 font-roboto">
           <h1>Biografía del autor/a</h1>
           <h2>Luz María Rivas-Montoya, Universidad EAFIT</h2>
            <p>Doctora en Administración y magíster en Ciencias de la Administración de la Universidad EAFIT,
@@ -132,5 +124,3 @@
       <img src="assets/eafit.png" alt="Logo de Estramipymes" class="logo">
       <p>&copy; 2024 Universidad EAFIT. Todos los derechos reservados.</p>
     </footer>
-</body>
-</html>

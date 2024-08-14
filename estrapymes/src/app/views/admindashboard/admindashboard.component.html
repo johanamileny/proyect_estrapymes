@@ -4,47 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Administrador</title>
- 
 </head>
 <body>
-    <app-nav-menu-administrador></app-nav-menu-administrador>
+    
+  <app-nav-menu-administrador 
+  (navigateToLogin)="navigateToLogin()">
+</app-nav-menu-administrador>
     
     <header>
-        <a href="#" class="logo">
-            <b>Portal Administrador</b><br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
-        </a>
-        
-        <div class="search-container">
-            <div class="search-group">
-              <i class="fa-sharp fa-solid fa-magnifying-glass relative left-7 top-1 text-gray-400"></i>
-              <input type="text" 
-                     placeholder="Buscar.."
-                     class="search-box">
-              <button type="submit" class="search-button">Buscar</button>
-            </div>
-          
-            <div class="sing-idiomas-buttons">
-              <button type="button" class="idiomas font-bold">Inglés</button>
-              <button type="button" class="idiomas font-bold">Español</button>
-              <button (click)="navigateToLogin()" class="login-button font-bold">Cerrar Sesión</button>
-            </div>
-          </div>
-        
+      <a href="#" class="logo">
+        <b>Portal Administrador</b><br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
+      </a>
+      
+      <div class="search-container">
+        <div class="search-group">
+          <i class="fa-sharp fa-solid fa-magnifying-glass relative left-7 top-1 text-gray-400"></i>
+          <input type="text" placeholder="Buscar.." class="search-box">
+          <button type="submit" class="search-button">Buscar</button>
+        </div>
+      
+        <div class="account-menu">
+          <a href="#" class="nav-link font-bold" (click)="toggleAccountMenu()">
+            <i class="fa fa-user fa-2x nav-icon"></i>
+            <span class="nav-text">Cuenta</span>
+          </a>
+          <ul class="account-menu-dropdown">
+            <li><a (click)="showChangePassword()">Cambio de Contraseña</a></li>
+            <li><a (click)="logout()">Cerrar Sesión</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
-    <div class="landing-page">
-        <div class="charts-container">
-            <div class="chart"><app-graficaradar></app-graficaradar></div>
-            <div class="chart"><app-grafic-bowman></app-grafic-bowman></div>
-            <div class ="chart"><app-graficoreloj></app-graficoreloj></div>
-            <div class="chart"><app-graficacirculodorado></app-graficacirculodorado>                                     </div>
+    <div class="landing-page" *ngIf="!showPasswordChange">
+      <div class="charts-container">
+        <div id="app-graficaradar" class="chart"><app-graficaradar></app-graficaradar></div>
+        <div class="chart"><app-grafic-bowman></app-grafic-bowman></div>
+        <div class="chart"><app-graficoreloj></app-graficoreloj></div>
+        <div class="chart"><app-graficacirculodorado></app-graficacirculodorado></div>
+        <div id="user-management" class="user-management"><app-user-management></app-user-management></div>
+       
+      </div>
+    </div>
 
-          </div>
-        </div>
-    </body>
-    </html>
-  
+    <!-- Contenedor para el componente de cambio de contraseña -->
+    <div *ngIf="showPasswordChange" class="password-change-container">
+      <app-change-password></app-change-password>
+      <button (click)="hideChangePassword()">Cerrar</button>
+    </div>
 
+
+</body>
+</html>
 
 <!----
 <div class="user-section">
