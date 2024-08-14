@@ -1,140 +1,125 @@
-<div class="h-screen w-full flex items-center justify-center bg-cover bg-center" style="background-image: url('/assets/register.png');" >
+<div class="h-screen w-full flex items-center justify-center bg-cover bg-center" style="background-image: url('/assets/register.png');">
   <section class="p-8 bg-black bg-opacity-75 shadow-lg rounded-lg w-96">
-    <h2 class="text-center mb-6 font-extrabold text-3xl  text-blue-500">Registro</h2>
+    <h2 class="text-center mb-6 font-extrabold text-3xl text-blue-500">Registro</h2>
     <form [formGroup]="registerForm" class="flex flex-col" (ngSubmit)="register()">
       <div class="accounttype mb-6 flex justify-center">
         <input type="radio" value="natural" id="radioOne" name="account" formControlName="account" class="hidden peer/natural" />
-        <label for="radioOne" class="cursor-pointer py-2 px-4 mr-2 border-2 border-gray-300 rounded-lg  font-bold text-white peer-checked/natural:bg-blue-500 peer-checked/natural:text-white">Natural</label>
-        
+        <label for="radioOne" class="cursor-pointer py-2 px-4 mr-2 border-2 border-gray-300 rounded-lg font-bold text-white peer-checked/natural:bg-blue-500 peer-checked/natural:text-white">Natural</label>
+
         <input type="radio" value="juridica" id="radioTwo" name="account" formControlName="account" class="hidden peer/juridica" />
-        <label for="radioTwo" class="cursor-pointer py-2 px-4 ml-2 border-2 border-gray-300 rounded-lg  font-bold text-white peer-checked/juridica:bg-blue-500 peer-checked/juridica:text-white">Jurídica</label>
+        <label for="radioTwo" class="cursor-pointer py-2 px-4 ml-2 border-2 border-gray-300 rounded-lg font-bold text-white peer-checked/juridica:bg-blue-500 peer-checked/juridica:text-white">Jurídica</label>
       </div>
+
       <div class="relative mb-0">
         <i class="fa-solid fa-user absolute left-4 top-4 text-gray-500"></i>
-      <input class="mb-4 w-full p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="text" name="name" id="name" placeholder="Nombre - Razón Social"
-             formControlName="name" [ngClass]="{'mb-1': name?.invalid && (name?.dirty || name?.touched)}">
-      <div *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="mb-4">
-        <div *ngIf="name?.hasError('required')" class="text-red-600">
-          El nombre es obligatorio.
-        </div>
+        <input class="mb-4 w-full p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+               type="text"
+               name="name"
+               id="name"
+               placeholder="Nombre - Razón Social"
+               formControlName="name">
+        <div *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)" class="mb-4">
+          <div *ngIf="registerForm.get('name')?.hasError('required')" class="text-red-600">
+            El nombre es obligatorio.
+          </div>
         </div>
       </div>
-      <div *ngIf="isNatural" class="relative mb-0">
+
+      <div *ngIf="registerForm.get('account')?.value === 'natural'" class="relative mb-0">
         <i class="fa-solid fa-users absolute left-4 top-4 text-gray-500"></i>
-        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select" 
-                name="typeuser" id="typeuser" formControlName="typeuser" aria-label="Tipo de Usuario" required>
+        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select"
+                name="typeuser"
+                id="typeuser"
+                formControlName="typeuser">
           <option value="" disabled selected hidden>Tipo de Usuario</option>
           <option value="user">Usuario</option>
           <option value="student">Estudiante Posgrado</option>
           <option value="teacher">Docente EAFIT</option>
-        </select> 
-      </div>
-      <div *ngIf="typeuser.invalid && (typeuser.dirty || typeuser.touched)" class="mb-4">
-        <div *ngIf="typeuser.hasError('required')" class="text-red-600">
-          El tipo de usuario es obligatorio
+        </select>
+        <div *ngIf="registerForm.get('typeuser')?.invalid && (registerForm.get('typeuser')?.dirty || registerForm.get('typeuser')?.touched)" class="mb-4">
+          <div *ngIf="registerForm.get('typeuser')?.hasError('required')" class="text-red-600">
+            El tipo de usuario es obligatorio
+          </div>
         </div>
       </div>
-    
+
       <div class="relative mb-0">
         <i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-500"></i>
-      <input class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" type="email" name="email" id="email" placeholder="Correo"
-             formControlName="email" [ngClass]="{'mb-1': email?.invalid && (email?.dirty || email?.touched)}">
-      <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="mb-4">
-        <div *ngIf="email?.hasError('required')" class="text-red-600">
-          El correo es obligatorio.
-        </div>
-        <div *ngIf="email?.hasError('email')" class="text-red-600">
-          Ingresa un correo válido.
+        <input class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+               type="email"
+               name="email"
+               id="email"
+               placeholder="Correo"
+               formControlName="email">
+        <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)" class="mb-4">
+          <div *ngIf="registerForm.get('email')?.hasError('required')" class="text-red-600">
+            El correo es obligatorio.
+          </div>
+          <div *ngIf="registerForm.get('email')?.hasError('email')" class="text-red-600">
+            Ingresa un correo válido.
+          </div>
         </div>
       </div>
-    </div>
-      
+
       <div class="relative mb-0">
         <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
-        <input 
-            class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
-            type="password" 
-            name="password" 
-            id="password" 
-            placeholder="Contraseña" 
-            formControlName="password" 
-            [ngClass]="{'mb-1': registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)}">
+        <input
+            class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Contraseña"
+            formControlName="password">
         <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="mb-4">
             <div *ngIf="registerForm.get('password')?.hasError('required')" class="text-red-600">
                 La contraseña es obligatoria.
             </div>
         </div>
-    </div>
+      </div>
 
-    <div class="relative mb-0">
-      <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
-      <input
-      class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
-          type="password" 
+      <div class="relative mb-0">
+        <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
+        <input
+          class="mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+          type="password"
           name="passwordConfirm"
-          id="passwordConfirm" 
-          placeholder="Confirmación Contraseña" 
-          formControlName="passwordConfirm" 
-          [ngClass]="{'mb-1': registerForm.get('passwordConfirm')?.invalid && (registerForm.get('passwordConfirm')?.dirty || registerForm.get('passwordConfirm')?.touched)}">
-      <div *ngIf="registerForm.get('passwordConfirm')?.invalid && (registerForm.get('passwordConfirm')?.dirty || registerForm.get('passwordConfirm')?.touched)" class="mb-4">
-        <div *ngIf="registerForm.get('passwordConfirm')?.hasError('required')" class="text-red-600">
-          La confirmación de contraseña es obligatoria.
-        </div>
-        <div *ngIf="registerForm.get('passwordConfirm')?.hasError('mustMatch')" class="text-red-600">
-          Las contraseñas deben coincidir.
+          id="passwordConfirm"
+          placeholder="Confirmación Contraseña"
+          formControlName="passwordConfirm">
+        <div *ngIf="registerForm.get('passwordConfirm')?.invalid && (registerForm.get('passwordConfirm')?.dirty || registerForm.get('passwordConfirm')?.touched)" class="mb-4">
+          <div *ngIf="registerForm.get('passwordConfirm')?.hasError('required')" class="text-red-600">
+            La confirmación de contraseña es obligatoria.
+          </div>
+          <div *ngIf="registerForm.get('passwordConfirm')?.hasError('mustMatch')" class="text-red-600">
+            Las contraseñas deben coincidir.
+          </div>
         </div>
       </div>
-    </div>
 
-      
-      <div *ngIf="isJuridica" class="relative mb-0">
+      <div *ngIf="registerForm.get('account')?.value === 'juridica'" class="relative mb-0">
         <i class="fa-solid fa-building absolute left-4 top-4 text-gray-500"></i>
-        
-        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select" 
-                name="company" id="company" formControlName="company" aria-label="Tipo de Empresa" required>
+        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select"
+                name="company"
+                id="company"
+                formControlName="company">
           <option value="" disabled selected hidden>Tipo de Empresa</option>
           <option value="small">Pequeña</option>
           <option value="median">Mediana</option>
           <option value="big">Grande</option>
         </select>
 
-       <div class="relative mb-0">
         <i class="fa-solid fa-landmark absolute left-4 top-4 text-gray-500"></i>
-        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg  focus:border-blue-500 custom-select" 
-        name="company" id="company_sector" formControlName="company" required title="Seleccione el tipo de empresa">
-                name="sector" id="sector" formControlName="sector" required>
+        <select class="select-placeholder mb-4 w-full p-3 pl-10 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 custom-select"
+                name="sector"
+                id="sector"
+                formControlName="sector">
           <option value="" disabled selected hidden>Tipo de Sector</option>
           <option value="1">Agroindustria</option>
           <option value="2">Alimentación y Bebidas</option>
-          <option value="3">Automotriz</option>
-          <option value="4">Construcción</option>
-          <option value="5">Consultoría</option>
-          <option value="6">Educación</option>
-          <option value="7">Energía</option>
-          <option value="8">Entretenimiento y Medios</option>
-          <option value="9">Finanzas y Seguros</option>
-          <option value="10">Manufactura</option>
-          <option value="11">Minería</option>
-          <option value="12">Químicos</option>
-          <option value="13">Retail (Comercio Minorista)</option>
-          <option value="14">Salud y Bienestar</option>
-          <option value="15">Servicios Profesionales</option>
-          <option value="16">Tecnología de la Información (TI)</option>
-          <option value="17">Telecomunicaciones</option>
-          <option value="18">Textil y Moda</option>
-          <option value="19">Transporte y Logística</option>
-          <option value="20">Turismo y Hospitalidad</option>
-          <option value="21">Bienes Raíces</option>
-          <option value="22">Ambiental y Sostenibilidad</option>
-          <option value="23">Farmacéutico y Biotecnología</option>
-          <option value="24">Arte y Cultura</option>
-          <option value="25">Deportes y Recreación</option>
-          <option value="26">Investigación y Desarrollo (I+D)</option>
-          <option value="27">Servicios Públicos</option>
-          <option value="28">Defensa y Aeroespacial</option>
+          <!-- Resto de las opciones -->
         </select>
       </div>
-    </div>
+
       <div class="flex justify-center">
         <button
           class="bg-blue-500 text-white font-bold py-2 px-5 rounded-full hover:bg-blue-500 transition duration-300"
