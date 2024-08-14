@@ -19,11 +19,11 @@ export const routes: Routes = [
   { path: 'admindashboard', component:AdmindashboardComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   {path: 'nav-menu', component:NavMenuComponent},
-  {path: 'nav-menu-administrador', component:NavMenuAdministradorComponent}
   {path: 'nav-menu-administrador', component:NavMenuAdministradorComponent},
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'user-management', component: UserManagementComponent },
   {path: 'user', component:UserComponent}
+
 ];
 
 @NgModule({
