@@ -9,6 +9,9 @@ import { Component } from '@angular/core';
 })
 export class NavUserComponent {
   navigateToLogin() {
-    // Implementa la lógica para navegar a la página de inicio de sesión
+  
+  }
+  navigateToBook() {
+    window.open('https://editorial.eafit.edu.co/index.php/editorial/catalog/view/195/267/915', '_blank');
   }
 }
