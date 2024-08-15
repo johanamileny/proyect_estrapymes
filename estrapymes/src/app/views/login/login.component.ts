@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service'; // Ajusta la ruta según sea necesario
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -17,29 +15,29 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
     this.loginForm = this.fb.group({
-      email: ['', Validators.required,Validators.email],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
   login() {
     if (this.loginForm.invalid) {
+      this.errorMessage = 'Por favor, complete todos los campos correctamente.';
+      console.log('Formulario inválido:', this.loginForm.value); // Depuración
       return;
     }
 
     const { email, password } = this.loginForm.value;
+    console.log('Intentando iniciar sesión con:', email, password); // Depuración
 
-    let isLogin = false;
+    const isLoginSuccessful = this.authService.login(email, password);
 
-    try {
-      isLogin = this.authService.login(email, password);
-    } catch (error) {
-      console.log(error);
-      this.errorMessage = (error as any).message;
-    }
-
-    if (isLogin) {
-      this.router.navigateByUrl('homepage');
+    if (isLoginSuccessful) {
+      console.log('Inicio de sesión exitoso'); // Depuración
+      this.router.navigateByUrl('/homepage');
+    } else {
+      this.errorMessage = 'Correo electrónico o contraseña incorrectos.';
+      console.log('Inicio de sesión fallido'); // Depuración
     }
   }
 }

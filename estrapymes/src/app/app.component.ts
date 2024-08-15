@@ -7,7 +7,7 @@ import { HomepageComponent } from './views/homepage/homepage.component';
   standalone: true,
   imports: [RouterOutlet, HomepageComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'] // Asegúrate de usar `styleUrls` para una lista de estilos
 })
 export class AppComponent {
   title = 'estrapymes';

@@ -1,43 +1,59 @@
 <div class="h-screen w-full flex items-center justify-center bg-cover bg-center" style="background-image: url('/assets/login.png');">
-    <section class="p-8 bg-black bg-opacity-75 shadow-lg rounded-lg">
-        <h2 class="text-center mb-6 font-extrabold text-3xl text-blue-500">Inicio de Sesión</h2>
+  <section class="p-8 bg-black bg-opacity-75 shadow-lg rounded-lg">
+      <h2 class="text-center mb-6 font-extrabold text-3xl text-blue-500">Inicio de Sesión</h2>
 
-        <div class="relative mb-0">
-            <i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-500"></i>
-            <span class="text-red-500">{{errorMessage}}</span>
-            <form [formGroup]="loginForm" (ngSubmit)="login()" class="flex flex-col">
-                <input class="mb-4 w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
-                       type="text" 
-                       formControlName="email"
-                       placeholder="Correo">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="flex flex-col">
+          <!-- Mostrar mensaje de error si existe -->
+          <div *ngIf="errorMessage" class="text-red-500 text-center mb-4">
+              {{ errorMessage }}
+          </div>
 
-                <div class="relative mb-4">
-                    <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
-                    <input class="w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500" 
-                           type="password" 
-                           formControlName="password"
-                           placeholder="Contraseña">
-                </div>          
+          <div class="relative mb-4">
+              <i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-500"></i>
+              <input
+                  class="w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                  type="email"
+                  formControlName="email"
+                  placeholder="Correo"
+                  [ngClass]="{'border-red-500': loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)}">
+              <!-- Validación del campo email -->
+              <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)" class="text-red-500 mt-2 text-sm">
+                  <div *ngIf="loginForm.get('email')?.hasError('required')">El correo es obligatorio.</div>
+                  <div *ngIf="loginForm.get('email')?.hasError('email')">Debe ser un correo válido.</div>
+              </div>
+          </div>
 
-                <div class="flex flex-col items-center">
-                    <button
-                        class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full text-lg hover:bg-blue-500 transition duration-300 mb-4"  
-                        [disabled]="loginForm.invalid"
-                        type="submit">
-                        Iniciar Sesión 
-                    </button>
-                    
+          <div class="relative mb-4">
+              <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
+              <input
+                  class="w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                  type="password"
+                  formControlName="password"
+                  placeholder="Contraseña"
+                  [ngClass]="{'border-red-500': loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)}">
+              <!-- Validación del campo password -->
+              <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-red-500 mt-2 text-sm">
+                  <div *ngIf="loginForm.get('password')?.hasError('required')">La contraseña es obligatoria.</div>
+              </div>
+          </div>
 
-                    <a href="/forgot-password" class="text-white font-bold hover:underline text-sm">
-                        ¿Olvidaste tu contraseña?
-                    </a>
-                </div>
-            </form>
-        </div>
-        <div class="mt-4 text-center">
-            <a href="/register" class="text-white font-bold hover:underline">
-              ¿No tienes cuenta? Regístrate
-            </a>
-        </div>
-    </section>
+          <div class="flex flex-col items-center">
+              <button
+                  class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full text-lg hover:bg-blue-500 transition duration-300 mb-4"
+                  type="submit">
+                  Iniciar Sesión
+              </button>
+
+              <a href="/forgot-password" class="text-white font-bold hover:underline text-sm">
+                  ¿Olvidaste tu contraseña?
+              </a>
+          </div>
+      </form>
+
+      <div class="mt-4 text-center">
+          <a href="/register" class="text-white font-bold hover:underline">
+            ¿No tienes cuenta? Regístrate
+          </a>
+      </div>
+  </section>
 </div>

@@ -13,7 +13,7 @@ import { UserManagementModule } from './componentes/user-management/user-managem
   declarations: [UserManagementModule],
   imports: [
     CommonModule,
-    
+
   ]
 })
 export class AppModule { }
