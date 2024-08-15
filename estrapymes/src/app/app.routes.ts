@@ -10,6 +10,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { NavMenuAdministradorComponent } from './nav-menu-administrador/nav-menu-administrador.component';
 import { UserComponent } from './views/user/user.component';
 import { ChangePasswordComponent } from './views/change-password/change-password.component'; 
+import { ChangePasswordLoginComponent } from './views/change-password-login/change-password-login.component';
 import { UserManagementComponent } from './componentes/user-management/user-management.component';
 
 export const routes: Routes = [
@@ -19,11 +20,12 @@ export const routes: Routes = [
   { path: 'admindashboard', component:AdmindashboardComponent },
   { path: '', redirectTo: '/homepage', pathMatch: 'full' },
   {path: 'nav-menu', component:NavMenuComponent},
-  {path: 'nav-menu-administrador', component:NavMenuAdministradorComponent}
   {path: 'nav-menu-administrador', component:NavMenuAdministradorComponent},
   { path: 'change-password', component: ChangePasswordComponent },
+  { path: 'change-password-login', component: ChangePasswordLoginComponent },
   { path: 'user-management', component: UserManagementComponent },
   {path: 'user', component:UserComponent}
+
 ];
 
 @NgModule({
