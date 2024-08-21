@@ -17,8 +17,8 @@ export class StudentComponent implements OnInit {
   showUserManagement: boolean = false; // Añade esta propiedad
 
   public projects = [
-    { company: 'Empresa A', observations: 'Realizar un análisis de mercado.', testResults: [10, 20, 30] },
-    { company: 'Empresa B', observations: 'Optimizar el proceso de ventas.', testResults: [15, 25, 35] },
+    { company: 'InnovaCorp', observations: 'Realizar un análisis de mercado.', testResults: [10, 20, 30] },
+    { company: 'Solaris Global', observations: 'Optimizar el proceso de ventas.', testResults: [15, 25, 35] },
   ];
 
   public showProjectTable = false;
