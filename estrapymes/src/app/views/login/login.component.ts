@@ -2,12 +2,16 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service'; 
 import { Router } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';  // Asegúrate de importar CommonModule
+import { ReactiveFormsModule } from '@angular/forms';  // Importar ReactiveFormsModule si no está ya importado
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,        // Importar CommonModule para usar ngClass y otras directivas
+    ReactiveFormsModule, // Importar ReactiveFormsModule para formularios reactivos
+  ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
@@ -29,6 +33,7 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.invalid) {
+      this.errorMessage = 'Por favor, complete todos los campos correctamente.';
       return;
     }
 

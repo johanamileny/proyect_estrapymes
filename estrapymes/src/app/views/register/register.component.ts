@@ -17,37 +17,64 @@ export class RegisterComponent implements OnInit {
     account: new FormControl('natural', Validators.required),
     name: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    typeuser: new FormControl(''),
-    company: new FormControl(''),
+    typeuser: new FormControl('', [Validators.required]), 
+    company: new FormControl(''), 
     sector: new FormControl(''),
     password: new FormControl('', Validators.required),
     passwordConfirm: new FormControl('', Validators.required)
   }, { validators: passwordConfirmValidator });
 
+  isJuridica = false;
+  isNatural = false;
+
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {
-    this.updateValidators(this.registerForm.get('account')?.value as string);
+  get name() {
+    return this.registerForm.get('name');
+  }
+  get typeuser() {
+    return this.registerForm.get('typeuser');
+  }
 
-    // Actualiza validadores cuando el tipo de cuenta cambia
+  get email() {
+    return this.registerForm.get('email');
+  }
+  get company() {
+    return this.registerForm.get('company');
+  }
+  get sector() {
+    return this.registerForm.get('sector');
+  }
+
+  ngOnInit(): void {
+    // Inicializa el estado del formulario basado en el valor inicial de 'account'
+    this.onAccountTypeChange(this.registerForm.get('account')?.value as string);
+    // Escucha los cambios en el tipo de cuenta
     this.registerForm.get('account')?.valueChanges.subscribe(value => {
-      this.updateValidators(value as string);
+      this.onAccountTypeChange(value as string);
     });
   }
 
-  updateValidators(accountType: string) {
-    if (accountType === 'juridica') {
+  onAccountTypeChange(type: string) {
+    this.isJuridica = type === 'juridica';
+    this.isNatural = type === 'natural';
+
+    if (this.isJuridica) {
       this.registerForm.get('company')?.setValidators(Validators.required);
       this.registerForm.get('sector')?.setValidators(Validators.required);
-      this.registerForm.get('typeuser')?.clearValidators();
     } else {
       this.registerForm.get('company')?.clearValidators();
       this.registerForm.get('sector')?.clearValidators();
-      this.registerForm.get('typeuser')?.setValidators(Validators.required);
     }
 
     this.registerForm.get('company')?.updateValueAndValidity();
     this.registerForm.get('sector')?.updateValueAndValidity();
+
+    if (this.isNatural) {
+      this.registerForm.get('typeuser')?.setValidators(Validators.required);
+    } else {
+      this.registerForm.get('typeuser')?.clearValidators();
+    }
     this.registerForm.get('typeuser')?.updateValueAndValidity();
   }
 

@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* Header Styles */
@@ -18,7 +18,7 @@ header {
   z-index: 1000;
   height: 80px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  justify-content: space-between; /* Distribuye el espacio entre el logo y el menú de cuenta */
+  justify-content: space-between;
 }
 
 /* Contenedor para centrar el logo y el texto */
@@ -28,7 +28,7 @@ header {
   justify-content: center;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto; /* Centra el contenido del header */
+  margin: 0 auto;
   flex: 1;
 }
 
@@ -45,22 +45,7 @@ header {
 .header-right {
   display: flex;
   align-items: center;
-  margin-left: auto; /* Alinea el menú de cuenta a la derecha */
-}
-header .search-box {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-right: 10px;
-}
-
-header .search-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-left: auto;
 }
 
 header .account-menu {
@@ -76,10 +61,6 @@ header .account-menu .nav-link {
   cursor: pointer;
 }
 
-header .account-menu .nav-icon {
-  margin-right: 10px;
-}
-
 header .account-menu-dropdown {
   display: none;
   position: absolute;
@@ -92,10 +73,6 @@ header .account-menu-dropdown {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-header .account-menu-dropdown li {
-  list-style: none;
 }
 
 header .account-menu-dropdown li a {
@@ -121,18 +98,22 @@ header .account-menu:hover .account-menu-dropdown {
 }
 
 .sidebar {
-  width: 15%;
+  width: 250px; /* Fijar ancho del panel lateral */
   background-color: #3B82F6;
   padding: 20px;
+  flex-shrink: 0; /* Evitar que el panel lateral se expanda o encoja */
+  height: calc(100vh - 80px); /* Asegura que la barra lateral ocupe toda la altura de la pantalla, menos la altura del encabezado */
+  position: fixed; /* Fijar la posición del sidebar */
+  top: 80px; /* Ajustar para que el sidebar comience justo debajo del header */
 }
 
 .content {
-  min-width:800px;
-  padding: 180px;
-  margin-top: -80px;
+  margin-left: 250px; /* Mover el contenido hacia la derecha para dejar espacio para la barra lateral */
+  padding: 20px;
+  overflow-x: auto; /* Para manejar tablas grandes y asegurar que no se rompa el diseño */
 }
 
-/* Ajustar ancho de la tabla */
+/* Estilos de la tabla */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -167,14 +148,13 @@ table {
 
 /* Ajustes para el contenedor de cambio de contraseña */
 .password-change-container {
-  padding: 16px;
   background-color: #f9f9f9;
   border-radius: 4px;
   position: absolute;
-  top: 135px;
+  top: 130px;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 27%;
   height: auto;
   background: white;
   z-index: 900; /* Asegúrate de que esté en una capa superior */
@@ -186,12 +166,6 @@ table {
   right: 10px;
 }
 
-.cerrar{
-  margin-left: 760px;
-}
-.logo{
+.logo {
   margin-left: 400px;
 }
-
-
-
