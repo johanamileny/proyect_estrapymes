@@ -10,31 +10,35 @@
   <app-nav-menu-administrador 
   (navigateToLogin)="navigateToLogin()">
 </app-nav-menu-administrador>
+
+<header>
+  <div class="container">
+    <a href="#" class="logo text-white font-bold">
+      <b>Portal Administrador</b> <br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
+    </a>
     
-    <header>
-      <a href="#" class="logo">
-        <b>Portal Administrador</b><br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
-      </a>
-      
+    <div class="search-and-account">
       <div class="search-container">
-        <div class="search-group">
-          <i class="fa-sharp fa-solid fa-magnifying-glass relative left-7 top-1 text-gray-400"></i>
-          <input type="text" placeholder="Buscar.." class="search-box">
-          <button type="submit" class="search-button">Buscar</button>
-        </div>
-      
-        <div class="account-menu">
-          <a href="#" class="nav-link font-bold" (click)="toggleAccountMenu()">
-            <i class="fa fa-user fa-2x nav-icon"></i>
-            <span class="nav-text">Cuenta</span>
-          </a>
-          <ul class="account-menu-dropdown">
-            <li><a (click)="showChangePassword()">Cambio de Contraseña</a></li>
-            <li><a (click)="logout()">Cerrar Sesión</a></li>
-          </ul>
+        <div class="search-group" id="searchGroup">
+          <img src="assets/glass-search.svg" alt="Buscar" class="search-icon" (click)="toggleSearch()" />
+          <input type="text" placeholder="Buscar..." class="search-box" id="searchBox">
         </div>
       </div>
-    </header>
+
+      <div class="account-menu">
+        <a href="#" class="nav-link font-bold" (click)="toggleAccountMenu()">
+          <i class="fa fa-user fa-2x nav-icon"></i>
+          <span class="nav-text" id="accountName">Cuenta</span>
+        </a>
+        <ul class="account-menu-dropdown">
+          <li><a (click)="showChangePassword()">Cambio de Contraseña</a></li>
+          <li><a (click)="logout()">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
 
     <div class="landing-page" *ngIf="!showPasswordChange">
       <div class="charts-container">

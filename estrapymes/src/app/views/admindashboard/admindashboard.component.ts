@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BaseChartDirective } from 'ng2-charts';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
@@ -35,14 +35,50 @@ import { UserManagementModule } from '../../componentes/user-management/user-man
   templateUrl: './admindashboard.component.html',
   styleUrls: ['./admindashboard.component.scss']
 })
-export class AdmindashboardComponent {
+export class AdmindashboardComponent implements OnInit {
   selectedUser!: User;
   users: User[] = [];
-  showPasswordChange: boolean = false;
-  showUserManagement: boolean = false; // Añade esta propiedad
+  showPasswordChange = false;
+  showUserManagement = false;
 
   constructor(private usersService: UsersService, private router: Router) {}
 
+  toggleSearch(): void {
+    const searchGroup = document.getElementById('searchGroup')!;
+    const searchBox = document.getElementById('searchBox')!;
+    const isExpanded = searchGroup.classList.contains('expanded');
+    
+    if (isExpanded) {
+      searchGroup.classList.remove('expanded');
+      searchBox.blur();
+    } else {
+      searchGroup.classList.add('expanded');
+      searchBox.focus();
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  clickOutside(event: MouseEvent): void {
+    const searchGroup = document.getElementById('searchGroup')!;
+    const searchBox = document.getElementById('searchBox')!;
+    
+    // Check if the click is outside the search container
+    if (!searchGroup.contains(event.target as Node)) {
+      searchGroup.classList.remove('expanded');
+      searchBox.blur();
+    }
+  }
+
+  ngOnInit(): void {
+    this.loadAccountName();
+  }
+  
+  loadAccountName(): void {
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const accountName = users.length > 0 ? users[0].name : 'Cuenta';
+    document.getElementById('accountName')!.textContent = accountName;
+  }
+  
   updateUser(updatedUser: User) {
     const index = this.users.findIndex(user => user.id === updatedUser.id);
     if (index !== -1) {
@@ -75,11 +111,11 @@ export class AdmindashboardComponent {
   }
 
   showUserManagementPanel() {
-    this.showUserManagement = true; // Método para mostrar el panel de gestión de usuarios
+    this.showUserManagement = true;
   }
 
   hideUserManagementPanel() {
-    this.showUserManagement = false; // Método para ocultar el panel de gestión de usuarios
+    this.showUserManagement = false;
   }
 
   navigateToLogin() {
