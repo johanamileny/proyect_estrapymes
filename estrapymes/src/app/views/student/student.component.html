@@ -1,0 +1,97 @@
+<header>
+  <a href="#" class="logo">
+    <b>Portal Administrador</b><br>Transforma tu Pyme con EstraMiPyme: Innovación y Estrategia para el futuro
+  </a>
+
+  <div class="account-menu">
+    <a href="#" class="nav-link font-bold" (click)="toggleAccountMenu()">
+      <i class="fa fa-user fa-2x nav-icon"></i>
+      <span class="nav-text">Cuenta</span>
+    </a>
+    <ul class="account-menu-dropdown">
+      <li><a (click)="showChangePassword()">Cambio de Contraseña</a></li>
+      <li><a (click)="logout()">Cerrar Sesión</a></li>
+    </ul>
+  </div>
+</header>
+
+  
+
+  <div class="student-container">
+    <aside class="sidebar">
+      <ul>
+      <li>
+        <a href="#" class="nav-link font-bold">
+          <i class="fa fa-home fa-2x nav-icon"></i>
+          <span class="nav-text">Inicio</span>
+        </a>
+      </li>
+      
+      <li>
+        <a class="nav-link font-bold">
+          <i class="fa fa-home fa-2x nav-icon"></i>
+        <span class="nav-text" (click)="showProjects()">Proyectos Asignados</span>
+      </a>
+      </ul>
+
+    </aside>
+
+    <div class="content">
+
+      <div class="container scroll-trigger">
+        <div class="main-text font-roboto">
+          <h1>¡Despierta el Potencial de Tu PYME!</h1>
+          <p>En Estramipyme, estamos aquí para llevar tu negocio al 
+            siguiente nivel con estrategias innovadoras y herramientas poderosas. 
+            ¡Comienza ahora y descubre cómo puedes transformar tu empresa y alcanzar nuevas alturas!</p>
+          <p><strong>Inicia tu viaje: Explora, Conoce, Actualiza, Integra</strong></p>
+        </div>
+        <div class="image-container">
+          <img src="assets/estramipyme.png" alt="Imagen de Estramipymes">
+        </div>
+      </div>
+
+      <div *ngIf="showProjectTable">
+        <!-- Botón para cerrar la tabla -->
+        <button class="cerrar" (click)="hideProjects()">Cerrar</button>
+        <table>
+          <thead>
+            <tr>
+              <th>Empresa</th>
+              <th>Observación del Profesor</th>
+              <th>Test Realizado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects">
+              <td>{{ project.company }}</td>
+              <td>{{ project.observations }}</td>
+              <td>
+                <button (click)="viewTestResults(project)">Ver Gráficas</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+
+      <div *ngIf="selectedProject">
+        <div class="chart-container">
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="chart-container">
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+    
+  
+
+  <div *ngIf="showPasswordChange" class="password-change-container">
+    <app-change-password></app-change-password>
+    <button (click)="hideChangePassword()">Cerrar</button>
+  </div>

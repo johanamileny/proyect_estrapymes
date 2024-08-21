@@ -1,0 +1,197 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: space-between; /* Distribuye el espacio entre el logo y el menú de cuenta */
+}
+
+/* Contenedor para centrar el logo y el texto */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Centra el contenido del header */
+  flex: 1;
+}
+
+/* Logo y texto */
+.header-content .logo {
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  flex: 1;
+}
+
+/* Contenedor para el menú de cuenta */
+.header-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Alinea el menú de cuenta a la derecha */
+}
+header .search-box {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+header .search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header .account-menu {
+  position: relative;
+}
+
+header .account-menu .nav-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+header .account-menu .nav-icon {
+  margin-right: 10px;
+}
+
+header .account-menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #3B82F6;
+  border: 1px solid #ddd;
+  width: 200px;
+  z-index: 1001;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header .account-menu-dropdown li {
+  list-style: none;
+}
+
+header .account-menu-dropdown li a {
+  display: block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+}
+
+header .account-menu-dropdown li a:hover {
+  background-color: #62A9BD;
+}
+
+header .account-menu:hover .account-menu-dropdown {
+  display: block;
+}
+
+/* Main Container Styles */
+.student-container {
+  display: flex;
+  height: 100vh;
+  margin-top: 80px; /* Offset for fixed header */
+}
+
+.sidebar {
+  width: 15%;
+  background-color: #3B82F6;
+  padding: 20px;
+}
+
+.content {
+  min-width:800px;
+  padding: 180px;
+  margin-top: -80px;
+}
+
+/* Ajustar ancho de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* Ajustar ancho mínimo y máximo de la tabla */
+table {
+  min-width: 800px; /* Tamaño mínimo de la tabla */
+  max-width: 100%; /* No exceder el contenedor */
+}
+
+/* Ajustes para las gráficas */
+.chart-container {
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  max-width: 830px; /* Tamaño máximo de la gráfica */
+  margin: 30px auto; /* Centrar la gráfica y añadir un margen superior/inferior */
+  border: 2px solid #000; /* Añadir borde negro */
+  padding: 80px; /* Espaciado alrededor de la gráfica */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo claro */
+}
+
+/* Ajustes para el contenedor de cambio de contraseña */
+.password-change-container {
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  position: absolute;
+  top: 135px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: auto;
+  background: white;
+  z-index: 900; /* Asegúrate de que esté en una capa superior */
+}
+
+.password-change-container button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.cerrar{
+  margin-left: 760px;
+}
+.logo{
+  margin-left: 400px;
+}
+
+
+

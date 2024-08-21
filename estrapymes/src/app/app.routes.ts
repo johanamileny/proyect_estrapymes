@@ -12,6 +12,7 @@ import { UserComponent } from './views/user/user.component';
 import { ChangePasswordComponent } from './views/change-password/change-password.component'; 
 import { ChangePasswordLoginComponent } from './views/change-password-login/change-password-login.component';
 import { UserManagementComponent } from './componentes/user-management/user-management.component';
+import { StudentComponent } from './views/student/student.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -24,7 +25,9 @@ export const routes: Routes = [
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'change-password-login', component: ChangePasswordLoginComponent },
   { path: 'user-management', component: UserManagementComponent },
-  {path: 'user', component:UserComponent}
+  {path: 'user', component:UserComponent},
+  {path: 'student', component: StudentComponent }
+
 
 ];
 
