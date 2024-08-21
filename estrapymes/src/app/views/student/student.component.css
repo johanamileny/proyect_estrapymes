@@ -95,7 +95,6 @@ header .account-menu:hover .account-menu-dropdown {
   display: flex;
   height: 100vh;
   margin-top: 80px; /* Offset for fixed header */
-  color: white;
   
 }
 
