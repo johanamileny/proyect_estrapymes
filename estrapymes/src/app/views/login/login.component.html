@@ -19,6 +19,20 @@
                            placeholder="Contraseña">
                 </div>          
 
+          <div class="relative mb-4">
+              <i class="fa-solid fa-lock absolute left-4 top-4 text-gray-500"></i>
+              <input
+                  class="w-80 p-3 pl-10 border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                  type="password"
+                  formControlName="password"
+                  placeholder="Contraseña"
+                  [ngClass]="{'border-red-500': loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)}">
+              <!-- Validación del campo password -->
+              <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="text-red-500 mt-2 text-sm">
+                  <div *ngIf="loginForm.get('password')?.hasError('required')">La contraseña es obligatoria.</div>
+              </div>
+          </div>
+
                 <div class="flex flex-col items-center">
                     <button
                         class="bg-blue-600 text-white font-bold py-2 px-5 rounded-full text-lg hover:bg-blue-500 transition duration-300 mb-4"  
@@ -32,7 +46,6 @@
                     
                 </div>
             </form>
-        </div>
         <div class="mt-4 text-center">
             <a href="/register" class="text-white font-bold hover:underline">
               ¿No tienes cuenta? Regístrate
